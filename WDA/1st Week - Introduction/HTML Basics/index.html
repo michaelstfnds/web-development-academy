@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Important head tags for our html files -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
         <title>Hello World</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="scrip.js"></script>
+        <!-- 1st way to include a styling is by linking to an external css file -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <!-- 2nd way to include a styling is by directly type it in a style tag in our head -->
+        <style type="text/css">
+            body {
+                background: #000;
+            }
+        </style>
+        <!-- one way to add javascript code is by linking an external js file -->
+        <script src="assets/js/scrip.js" type="text/javascript"></script>
+        <!-- another way to add javascript code is to add the code inside a script tag directly in our html code -->
+        <script>
+            console.log(0);
+        </script>
     </head>
     <body>
         <header>
 
         </header>
         <main>
-            <section>
+            <!-- a 3rd way to add css is to add the style attribute directly in an html tag -->
+            <section style="background: #00f;">
                 <div>
                     <h1>Hello World!</h1>
                 </div>
