@@ -3,3 +3,24 @@ body {
     color: #fff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+body a {
+    color: #fff;
+}
+
+body section#secondary-section a {
+    color: red;
+}
+
+body section a {
+    color: turquoise;
+}
+
+a {
+    color: orange;
+}
+
+form {
+    background: white;
+    color: gray;
+}
