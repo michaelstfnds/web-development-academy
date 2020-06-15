@@ -4645,7 +4645,8 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  /* color: rgba(0, 0, 0, 0.9); */
+    color: white;
 }
 
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
@@ -5333,13 +5334,14 @@ a.badge-dark:focus, a.badge-dark.focus {
 .alert-secondary {
   color: #383d41;
   /* background-color: #e2e3e5; */
-  background-color: rgba(226, 227, 229, 0.6);
-  border-color: #d6d8db;
+  background-color: rgba(226, 227, 229, 0.7);
+  /* border-color: #d6d8db; */
   /* opacity: 0.5; */
   /* align-items: center !important; */
   width: 400px !important;
+  height: 200px !important;
   margin: auto !important;
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .alert-secondary hr {
@@ -6795,7 +6797,8 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  /* background-color: #f8f9fa !important; */
+  background-color: white;
 }
 
 a.bg-light:hover, a.bg-light:focus,
