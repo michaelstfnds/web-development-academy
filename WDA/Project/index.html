@@ -15,7 +15,7 @@
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body class="homepage-style">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <a class="navbar-brand" href="#">Hotel Stay</a>
@@ -71,7 +71,6 @@
                         </div>
                         <hr>
                         <div class="alert alert-secondary" role="alert">
-                            <br>
                             <form method="POST" action="list.html">
                                 <select name="formCity" id="formCity">
                                     <option value="null" selected>City</option>
@@ -85,10 +84,8 @@
                                     <option value="female">2 People</option>
                                     <option value="other">3+ People</option>
                                 </select>
-                                <br><br>
                                 <input type="date" id="checkIn" name="checkIn" placeholder="Check-in Date">
                                 <input type="date" id="checkOut" name="checkOut" placeholder="Check-out Date">
-                                <br><br>
                                 <button type="button" class="btn btn-info">Search</button>
                             </form>
                         </div>

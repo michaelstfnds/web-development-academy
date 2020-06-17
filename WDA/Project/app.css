@@ -1,4 +1,4 @@
-body {
+body.homepage-style {
     background: url(hotel6.jpg);
     background-size: cover;
     background-position: center;
@@ -18,13 +18,13 @@ body {
     box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.25);
 } */
 
-header.css-shadow{
+header.css3-shadow{
     position:relative;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0);
     box-shadow:0 1px 4px rgba(0, 0, 0, 0);
 }
 
-header.css-shadow:after{
+header.css3-shadow:after{
     content:"";
     position:absolute;
     z-index:-1;
@@ -39,6 +39,93 @@ header.css-shadow:after{
     border-radius:100%;
 }
 
+aside.main-aside {
+    width: 250px;
+    height: 500px;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-left: 60px;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: left;
+    /* border: 1px solid #000; */
+
+    position:relative;
+    -webkit-box-shadow: 4px 4px 12px -1px rgba(171,168,171,1);
+    -moz-box-shadow: 4px 4px 12px -1px rgba(171,168,171,1);
+    box-shadow: 4px 4px 12px -1px rgba(171,168,171,1);
+    border-radius: 7px;
+}
+
+#formCity,
+#formRoomType {
+    width: 175px;
+    height: 45px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #fafafa;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#checkIn,
+#checkOut {
+    width: 175px;
+    height: 45px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #fafafa;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+ul {
+    list-style-type:none;
+}
+
+section.hotel-list {
+
+    width: 700px;
+    height: 500px;
+    margin-top: 50px;
+    margin-right: 60px;
+    margin-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: right;
+}
+
+article{
+    /* border: 1px solid #000; */
+    margin-bottom: 10px;
+    height: 200px;
+    -webkit-box-shadow: 4px 4px 12px -1px rgba(171,168,171,1);
+    -moz-box-shadow: 4px 4px 12px -1px rgba(171,168,171,1);
+    box-shadow: 4px 4px 12px -1px rgba(171,168,171,1);
+    border-radius: 7px;
+}
+
+aside.article-aside{
+    border-right: 2px solid #000 !important;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+    float: left;
+    height: 170px;
+    width: 150px;
+}
+
+.hotel-info {
+    /* margin-top: 20px; */
+    padding-top: 10px;
+}
+
+
+/* article > p {
+    float: right;
+} */
+
 footer {
     position: absolute;
     bottom: 0;
@@ -47,7 +134,7 @@ footer {
   }
 
 p.copyrights {
-    color: #fff !important;
+    color: #fafafa !important;
     margin: auto !important;
     text-align: center !important;
 }
@@ -79,6 +166,11 @@ hr {
 
 form {
     margin: 0 auto;
+}
+
+body > footer.page-footer {
+    background: #ccc;
+    border-top: 3px solid #808080;
 }
 
 
