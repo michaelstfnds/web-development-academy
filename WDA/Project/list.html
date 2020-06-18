@@ -38,12 +38,13 @@
                     <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">
-                            <i class="glyphicon glyphicon-home"></i> Home
+                            <i class="fas fa-home"></i> Home
                         </a>
                     </li>
+                    <li class="nav-item"> | </li>
                     <li class="nav-item dropdown">
                         <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            My Account
+                            <i class="fas fa-user"></i> Profile
                         </a>
                         <!-- <ul class="dropdown-menu">
                             <li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
@@ -64,18 +65,47 @@
         <section class="container-xl">
             <aside class="main-aside">
                 <section class="menu-sidebar">
-                    <h5>Grande Bretagne</h5>
-                    <h5>Hilton Athens</h5>
+                    <h5>FIND THE PERFECT HOTEL</h5>
+                    <div class="sidebar-form">
+                        <form method="POST" action="list.html">
+                            <select name="form-count-guests" id="form-count-guests">
+                                <option value="null" selected>City</option>
+                                <option value="male">1</option>
+                                <option value="female">2</option>
+                                <option value="other">2+</option>
+                            </select>
+                            <select name="formRoomType" id="formRoomType">
+                                <option value="null" selected>Room Type</option>
+                                <option value="male">1 BR</option>
+                                <option value="female">2 BR</option>
+                                <option value="other">Suite</option>
+                            </select>
+                            <select name="formCity" id="formCity">
+                                <option value="null" selected>City</option>
+                                <option value="male">Athens</option>
+                                <option value="female">Mykonos</option>
+                                <option value="other">Chania</option>
+                            </select>
+                            <label for="vol">0$ <----------> 5000$</label><br>
+                            <input type="range" id="price-range" name="price-range" min="0" max="5000">
+                            <input type="date" id="checkIn" name="checkIn" placeholder="Check-in Date">
+                            <input type="date" id="checkOut" name="checkOut" placeholder="Check-out Date">
+                            <button type="button" class="btn btn-info">FIND HOTEL</button>
+                        </form>
+                    </div>
                 </section>
             </aside>
             <section class="hotel-list">
+                <h6 class="search-results-title">Search Results</h6>
                 <article>
                     <aside class="article-aside">
 
                     </aside>
                     <div class="hotel-info">
-                        <h4> Hotel Grande Bretagne</h4>
-                        <p>This is the a 5 star hotel in the center of Athens</p>
+                        <h5 class="hotel-name" > Hotel Grande Bretagne</h5>
+                        <p  class="hotel-address">ATHENS, SYNTAGMA</p>
+                        <p>This is the a 5 star hotel in the center of Athens. This is the a 5 star hotel in the center of Athens</p>
+                        <button type="button" class="btn btn-info">Go to Room Page</button>
                     </div>
                 </article>
                 <article>
