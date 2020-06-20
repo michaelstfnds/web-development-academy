@@ -2,10 +2,31 @@ body.homepage-style {
     background: url(hotel6.jpg);
     background-size: cover;
     background-position: center;
-    font-family: 'Lato';
+
+    /* font-family: 'Lato'; */
     /* color: white; */
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/* main.homepage-style {
+    background: url(hotel6.jpg);
+    background-size: cover;
+    background-position: center;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* color: #000; */
+    font-weight: 400 !important;
+}
 /* footer {
     margin-top: 10;
 } */
@@ -18,13 +39,17 @@ body.homepage-style {
     box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.25);
 } */
 
-header.css3-shadow{
+/* header {
+    background: #ccc !important;
+} */
+
+header.header-shadow{
     position:relative;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0);
     box-shadow:0 1px 4px rgba(0, 0, 0, 0);
 }
 
-header.css3-shadow:after{
+header.header-shadow:after{
     content:"";
     position:absolute;
     z-index:-1;
@@ -39,10 +64,14 @@ header.css3-shadow:after{
     border-radius:100%;
 }
 
-aside.main-aside {
+header > nav div ul li > span.divider {
+    font-size: 25px;
+}
+
+aside.sidebar-menu {
     width: 250px;
     height: 500px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-right: 10px;
     margin-left: 60px;
     padding-right: 10px;
@@ -58,23 +87,42 @@ aside.main-aside {
     border-radius: 5px; */
 }
 
-aside.main-aside:before {
+aside.sidebar-menu:before {
     position: absolute;
     z-index: -1;
 	content: "";
-	right: 22px;
-	top: 3px;
+	right: 23px;
+	top: 0px;
 	width: 50px;
     height: 450px;
+	background: #fff;
+  -webkit-box-shadow: 27px -2px 6px -1px rgba(207,205,207,0.5);
+  -moz-box-shadow: 27px -2px 6px -1px rgba(207,205,207,0.5);
+  box-shadow: 27px -2px 6px -1px rgba(207,205,207,0.5);
+  -webkit-transform: rotate(6deg);
+	-moz-transform: rotate(6deg);
+	-o-transform: rotate(6deg);
+	-ms-transform: rotate(6deg);
+	transform: rotate(6deg);
+}
+
+aside.sidebar-menu:after {
+    position: absolute;
+    z-index: -1;
+	content: "";
+	right: 180px;
+	top: 120px;
+	width: 50px;
+    height: 200px;
 	background: #777;
-  -webkit-box-shadow: 27px -6px 3px -2px rgba(207,205,207,0.77);
-  -moz-box-shadow: 27px -6px 3px -2px rgba(207,205,207,0.77);
-  box-shadow: 27px -6px 3px -2px rgba(207,205,207,0.77);
-  -webkit-transform: rotate(4deg);
-	-moz-transform: rotate(4deg);
-	-o-transform: rotate(4deg);
-	-ms-transform: rotate(4deg);
-	transform: rotate(4deg);
+  -webkit-box-shadow: -27px -6px 6px -1px rgba(207,205,207,0.5);
+  -moz-box-shadow: -27px -6px 6px -1px rgba(207,205,207,0.5);
+  box-shadow: -27px -6px 6px -1px rgba(207,205,207,0.5);
+  -webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
+	transform: rotate(-7deg);
 }
 
 #formCity,
@@ -115,7 +163,7 @@ section.hotel-list {
     float: right;
 }
 
-article{
+article.hotel {
     /* border: 1px solid #000; */
     margin-bottom: 10px;
     height: 200px;
@@ -157,9 +205,9 @@ section.hotel-list article div.hotel-info {
     padding: 10px;
 }
 
-main section.main-aside section.menu-sidebar div.sidebar-form {
-    margin: auto !important;
-    width: 80px !important;
+main aside.sidebar-menu section div.sidebar-form {
+    margin: 0 auto !important;
+    /* width: 80px !important; */
     padding: 10px !important;
 }
 
@@ -179,17 +227,18 @@ section.hotel-list div.hotel-info p.hotel-address {
     float: right;
 } */
 
-footer {
+/* footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
+    height: 3rem;
+  } */
 
 p.copyrights {
     color: #fafafa !important;
     margin: auto !important;
     text-align: center !important;
+    padding-top: 10px;
 }
 
 html,
@@ -206,10 +255,10 @@ body {
                  0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-weight: 700;
+/* h1 {
+    font-weight: 400;
     font-size: 5em;
-}
+} */
 
 hr {
     width: 570px;
@@ -221,15 +270,20 @@ form {
     margin: 0 auto;
 }
 
-body > footer.page-footer {
+body footer.list-page-footer {
     background: #ccc;
     border-top: 3px solid #808080;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
 }
 
 
 .typewriter h3 {
     color: #fff;
-    font-family: Lato;
+    /* font-family: Lato; */
+    font-family: 'Roboto', sans-serif;
     width: 570px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid white; /* The typwriter cursor */

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotels</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" 
     rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" -->
+    <!-- rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
     crossorigin="anonymous"> -->
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
@@ -15,7 +17,7 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <header class="css3-shadow">
+    <header class="header-shadow">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" style="color: black;">Hotel Stay</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +43,7 @@
                             <i class="fas fa-home"></i> Home
                         </a>
                     </li>
-                    <li class="nav-item"> | </li>
+                    <li class="nav-item"><span class="divider"> | </span></li>
                     <li class="nav-item dropdown">
                         <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user"></i> Profile
@@ -63,8 +65,8 @@
 
     <main>
         <section class="container-xl">
-            <aside class="main-aside">
-                <section class="menu-sidebar">
+            <aside class="sidebar-menu">
+                <section>
                     <h5>FIND THE PERFECT HOTEL</h5>
                     <div class="sidebar-form">
                         <form method="POST" action="list.html">
@@ -97,7 +99,7 @@
             </aside>
             <section class="hotel-list">
                 <h6 class="search-results-title">Search Results</h6>
-                <article>
+                <article class="hotel">
                     <aside class="article-aside">
 
                     </aside>
@@ -108,7 +110,7 @@
                         <button type="button" class="btn btn-info">Go to Room Page</button>
                     </div>
                 </article>
-                <article>
+                <article class="hotel">
                     <aside class="article-aside">
 
                     </aside>
@@ -117,11 +119,20 @@
                         <p>This is the a 4 star hotel in the center of Athens</p>
                     </div>
                 </article>
+                <article class="hotel">
+                    <aside class="article-aside">
+
+                    </aside>
+                    <div class="hotel-info">
+                        <h4>Divani Caravel</h4>
+                        <p>This is the a 4 star hotel in the center of Athens</p>
+                    </div>
+                </article>
             </section>
         </section>
     </main>
 
-    <footer class="page-footer">
+    <footer class="list-page-footer">
         <p class="copyrights"> © CollegeLink 2020</p>
     </footer>
 </body>
