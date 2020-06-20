@@ -219,10 +219,19 @@ section.hotel-list div.hotel-info h5.hotel-name {
 section.hotel-list div.hotel-info p.hotel-address {
     margin-top: 1px;
     padding: 1px;
-    line-height: 15px;
+    line-height: 12px;
     margin-bottom: 5px;
     color: #808080;
     text-transform: uppercase;
+}
+
+section.hotel-list div.hotel-info p.hotel-description {
+    margin-top: 5px;
+    padding: 1px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    color: #808080;
+    font-size: 15px;
 }
 
 /* article > p {
@@ -308,3 +317,18 @@ body footer.list-page-footer {
     from, to { border-color: transparent }
     50% { border-color: white }
   }
+
+  /* Login Page */
+body > header.login-header {
+    color: #000 !important;
+}
+
+input#email,
+input#password {
+    width: 175px;
+    height: 45px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #fafafa;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
