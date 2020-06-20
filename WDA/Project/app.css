@@ -221,6 +221,8 @@ section.hotel-list div.hotel-info p.hotel-address {
     padding: 1px;
     line-height: 15px;
     margin-bottom: 5px;
+    color: #808080;
+    text-transform: uppercase;
 }
 
 /* article > p {
