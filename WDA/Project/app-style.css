@@ -93,14 +93,22 @@ aside.sidebar-menu {
     border-radius: 5px; */
 }
 
-aside.sidebar-menu div.sideba-form form input,
+/* aside.sidebar-menu div.sideba-form form input,
 aside.sidebar-menu div.sideba-form form select,
 aside.sidebar-menu div.sideba-form form textarea,
 aside.sidebar-menu div.sideba-form form label,
 aside.sidebar-menu div.sideba-form form input[type="button"] {
     width: 100%;
+} */
+
+main aside.sidebar-menu section div.sidebar-form {
+    margin: auto !important;
+    padding: 10px !important;
 }
 
+div.clear {
+    clear: both;
+}
 
 aside.sidebar-menu:before {
     position: absolute;
@@ -169,7 +177,6 @@ ul {
 section.hotel-list {
 
     width: 700px;
-    height: 500px;
     margin-top: 50px;
     margin-right: 60px;
     margin-left: 10px;
@@ -293,7 +300,7 @@ form {
 body footer.list-page-footer {
     background: #ccc;
     border-top: 3px solid #808080;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     right: 0;
