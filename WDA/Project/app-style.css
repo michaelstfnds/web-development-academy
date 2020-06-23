@@ -117,7 +117,7 @@ aside.sidebar-menu:before {
 	right: 23px;
 	top: 0px;
 	width: 50px;
-    height: 450px;
+    height: 430px;
 	background: #fff;
   -webkit-box-shadow: 27px -2px 6px -1px rgba(207,205,207,0.5);
   -moz-box-shadow: 27px -2px 6px -1px rgba(207,205,207,0.5);
@@ -150,23 +150,14 @@ aside.sidebar-menu:after {
 
 #formCity,
 #formRoomType,
-#form-count-guests {
-    width: 175px;
-    height: 45px;
-    border-radius: 7px 7px 7px 7px;
-    background-color: #fafafa;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
+#form-count-guests,
 #checkIn,
 #checkOut {
-    width: 175px;
-    height: 45px;
-    border-radius: 7px 7px 7px 7px;
+    width: 100%;
+    height: 50px;
+    border-radius: 7px;
     background-color: #fafafa;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 5px 0px 5px 0px;
 }
 
 
@@ -218,6 +209,7 @@ section.hotel-list article div.hotel-info {
     bottom: auto;
     float: right;
     margin-right: 10px;
+    width: 160px;
 }
 
 .hotel-list h6.search-results-title {
@@ -294,7 +286,8 @@ hr {
 }
 
 form {
-    margin: 0 auto;
+    margin: auto !important;
+    text-align: center;
 }
 
 body footer.list-page-footer {
@@ -345,10 +338,20 @@ body > header.login-header {
 
 input#email,
 input#password {
-    width: 175px;
-    height: 45px;
-    border-radius: 7px 7px 7px 7px;
+    width: 100%;
+    height: 50px;
+    border-radius: 7px;
     background-color: #fafafa;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.btn-size {
+    margin: 5px 0px 5px 0px;
+    width: 50% !important;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+form.login-form label {
+    text-align: left;
 }

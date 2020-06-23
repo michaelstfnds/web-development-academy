@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app-style.css">
 </head>
 <body>
     <header class="header-shadow">
@@ -59,16 +59,12 @@
                         </div>
                         <hr>
                         <div class="alert alert-secondary" role="alert">
-                            <form method="POST" action="">
-                                <div class="form-login-email">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email">
-                                </div>
-                                <div class="form-login-password">
-                                    <label for="password">Password</label>
-                                    <input type="password" id="password" name="password">
-                                </div>
-                                <button type="button" class="btn btn-info">Sign in</button>
+                            <form method="POST" action="" class="login-form">
+                                <label for="email">Email</label><br>
+                                <input type="email" id="email" name="email"><br>
+                                <label for="password">Password</label><br>
+                                <input type="password" id="password" name="password">
+                                <button type="button" class="btn btn-info btn-size">Sign in</button>
                             </form>
                         </div>
                     </div>
