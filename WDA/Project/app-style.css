@@ -1,12 +1,16 @@
 html{
     position: relative;
     min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body.homepage-style {
     background: url(hotel6.jpg);
     background-size: cover;
     background-position: center;
+    margin: 0;
+    padding: 0;
 
     /* font-family: 'Lato'; */
     /* color: white; */
@@ -31,7 +35,10 @@ h5,
 h6 {
     /* color: #000; */
     font-weight: 400 !important;
+
 }
+
+
 /* footer {
     margin-top: 10;
 } */
@@ -176,7 +183,7 @@ section.hotel-list {
     float: right;
 }
 
-article.hotel {
+section.hotel-list article.hotel {
     /* border: 1px solid #000; */
     margin-bottom: 10px;
     height: 200px;
@@ -186,23 +193,30 @@ article.hotel {
     border-radius: 5px;
 }
 
-aside.article-aside{
-    border-right: 2px solid #000 !important;
-    padding-left: 10px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 15px;
-    float: left;
-    height: 120px;
-    width: 150px;
+section.hotel-list article.hotel:last-child {
+    /* border: 1px solid #000; */
+    margin-bottom: 20px;
 }
 
-section.hotel-list article div.hotel-info {
-    /* margin-top: 20px; */
-    padding-top: 10px;
-    width: 505px;
-    float: right;
+aside.article-media{
+    padding: 0px 5px 0px 5px;
+    margin: 10px 5px 0px 5px;
+    float: left;
+    height: 120px;
+    width: 25%;
+}
+
+section.hotel-list article main.hotel-info {
+    margin: 5px 0px 0px 0px;
+    padding: 0px 0px 0px 15px;
+    width: 73%;
+    float: left;
+    box-sizing: border-box;
+    border-left: 2px solid #465699 !important;
+}
+
+.clear {
+    clear: both;
 }
 
 .hotel-list .hotel-info button.btn.btn-info {
@@ -219,21 +233,21 @@ section.hotel-list article div.hotel-info {
     padding: 10px;
 }
 
-section.hotel-list div.hotel-info h5.hotel-name {
+section.hotel-list main.hotel-info h4.hotel-name {
     margin-bottom: 1px;
     padding: 1px;
 }
 
-section.hotel-list div.hotel-info p.hotel-address {
+section.hotel-list main.hotel-info p.hotel-address {
     margin-top: 1px;
     padding: 1px;
     line-height: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: #808080;
     text-transform: uppercase;
 }
 
-section.hotel-list div.hotel-info p.hotel-description {
+section.hotel-list main.hotel-info p.hotel-description {
     margin-top: 5px;
     padding: 1px;
     line-height: 15px;
@@ -336,14 +350,21 @@ body > header.login-header {
     color: #000 !important;
 }
 
-input#email,
-input#password {
+form.login-form input,
+form.register-form input {
     width: 100%;
     height: 50px;
     border-radius: 7px;
     background-color: #fafafa;
     margin-bottom: 8px;
 }
+
+form.login-form label,
+form.register-form label{
+    float: left;
+}
+
+
 
 .btn-size {
     margin: 5px 0px 5px 0px;
