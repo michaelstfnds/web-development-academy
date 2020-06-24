@@ -5,7 +5,7 @@ html {
     padding: 0;
 }
 
-body.homepage-style {
+body.homepage {
     background: url(assets/images/hotel6.jpg);
     background-size: cover;
     background-position: center;
@@ -19,6 +19,11 @@ body {
     margin: 0;
     padding: 0;
 }
+
+body.homepage main {
+    height: 75%;
+}
+
 
 /* main.homepage-style {
     background: url(hotel6.jpg);
@@ -313,12 +318,23 @@ body {
 
 .container {
     text-align: center;
-    padding-top: 5%;
-    padding-bottom: 18%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
     text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
                  0px 8px 13px rgba(0, 0, 0, 0.1),
                  0px 18px 23px rgba(0, 0, 0, 0.1);
-                 height: 100%;
+}
+
+section.search-form {
+    width: 450px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px 0px 15px 0px;
 }
 
 /* h1 {
@@ -344,6 +360,13 @@ body footer.list-page-footer {
     left: 0;
     right: 0;
     height: 3rem;
+}
+
+body.homepage footer.homepage-footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
 }
 
 
