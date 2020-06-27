@@ -424,6 +424,12 @@ body > header.login-header {
     line-height: 25px;
 }
 
+/* ----- HOTEL LIST PAGE ----- */
+
+aside.sidebar-menu > section > h5 {
+    text-align: center;
+}
+
 /* ----- LOGIN PAGE ----- */
 
 div.login-form {
