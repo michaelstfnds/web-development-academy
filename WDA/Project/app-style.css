@@ -411,12 +411,6 @@ body.homepage footer.homepage-footer {
     50% { border-color: white }
   }
 
-  /* Login Page */
-body > header.login-header {
-    color: #000 !important;
-}
-
-
 .btn-size {
     margin: 5px 0px 5px 0px;
     width: 50% !important;
@@ -432,7 +426,12 @@ aside.sidebar-menu > section > h5 {
 
 /* ----- LOGIN PAGE ----- */
 
-div.login-form {
+body > header.login-header {
+    color: #000 !important;
+}
+
+div.login-form,
+div.register-form {
     width: 350px;
     background: rgba(255,255,255,1);
     border-radius: 20px;
