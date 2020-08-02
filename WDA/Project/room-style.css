@@ -38,8 +38,18 @@ h5,
 h6 {
     /* color: #000; */
     font-weight: 400 !important;
-
 }
+
+/* --------------------- Hotel Profile */
+
+.hotel-profile h6.profile-title {
+    color: #fff !important;
+    background: #465699 !important;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 
 
 /* footer {
@@ -196,15 +206,12 @@ ul {
     list-style-type:none;
 }
 
-section.hotel-list {
-
-    width: 700px;
-    margin-top: 50px;
-    margin-right: 60px;
-    margin-left: 10px;
+section.hotel-profile {
+    width: 800px;
+    margin: 50px auto 10px auto;
     padding-right: 10px;
     padding-left: 10px;
-    float: right;
+    /* float: right; */
 }
 
 section.hotel-list article.hotel {
@@ -277,12 +284,7 @@ div.hotel-footer {
     padding: 5px 5px 5px 5px;
 }
 
-.hotel-list h6.search-results-title {
-    color: #fff !important;
-    background: #465699 !important;
-    border-radius: 5px;
-    padding: 10px;
-}
+
 
 section.hotel-list main.hotel-info h4.hotel-name {
     margin-bottom: 1px;
@@ -422,7 +424,6 @@ body.homepage footer.homepage-footer {
 
 aside.sidebar-menu > section > h5 {
     text-align: center;
-    margin: 25px auto 10px auto;
 }
 
 /* ----- LOGIN PAGE ----- */

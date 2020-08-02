@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel: Grande Bretagne</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" -->
     <!-- rel="stylesheet"> -->
@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="app-style.css">
+    <link rel="stylesheet" href="room-style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+    </style>
 </head>
 <body>
     <header class="header-shadow">
@@ -56,7 +62,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="register.html">Sign Up <i class="fas fa-user-plus"></i></a>
                             <a class="dropdown-item" href="login.html">Log In <i class="fas fa-user"></i></a>
-                          </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -66,9 +72,21 @@
     <main>
         <section class="container-xl">
             <section class="hotel-profile">
-                <h6 class="search-results-title">Grande Bretagne</h6>
+                <h6 class="profile-title">Grande Bretagne - Athens, Syntagma | Reviews: ***** | </h6>
                 <div class="hotel-room-media">
-                    <img src="assets/images/comp/hotelroom1.jpg" alt="" width="100%" height="auto">
+                    <!-- <img src="assets/images/comp/hotelroom1.jpg" alt="" width="100%" height="auto"> -->
+                    <div class="w3-content w3-display-container" style="max-width:800px">
+                        <img class="mySlides" src="assets/images/comp/hotelroom1.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/images/comp/hotelroom4.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/images/comp/hotelroom5.jpg" style="width:100%">
+                        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                        </div>
+                    </div>
                 </div>
             </section>
             <div class="clear"></div>
@@ -81,5 +99,33 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function currentDiv(n) {
+          showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-white", "");
+          }
+          x[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " w3-white";
+        }
+        </script>
 </body>
 </html>
