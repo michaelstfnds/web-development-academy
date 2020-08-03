@@ -470,3 +470,13 @@ div.login-form label {
         width: 500px;
     }
 } */
+
+
+/* ---------- 5 star rating ---------- */
+
+.checked {
+    color: orange;
+}
+.unchecked {
+    color: white;
+}
