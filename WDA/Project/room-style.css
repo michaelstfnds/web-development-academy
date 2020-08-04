@@ -44,7 +44,13 @@ h6 {
     margin-top: 10px;
 }
 
-
+.hotel-profile div.profile-info {
+    color: #fff !important;
+    background: #465699 !important;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+}
 
 header.header-shadow{
     position:relative;
@@ -70,11 +76,6 @@ header.header-shadow:after{
 header > nav div ul li > span.divider {
     font-size: 25px;
 }
-
-
-
-
-
 
 div.clear {
     clear: both;
@@ -244,4 +245,31 @@ body > header.login-header {
 }
 .unchecked {
     color: white;
+}
+
+/* ---------- Hotel info tabs ---------- */
+.tab {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.tab li {
+    display: inline-block;
+    width: 19%;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border-inline-end-style: dashed;
+    border-inline-end-width: 1.5px;
+}
+
+.tab li:last-child {
+    display: inline-block;
+    width: 19%;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border-inline-end-style: none;
 }
