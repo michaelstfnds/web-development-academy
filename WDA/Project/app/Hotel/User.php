@@ -27,7 +27,6 @@ class User {
     }
 
     public function insert($name, $email, $password) {
-        
         //Prepare statement
         $statement = $this->getPdo()->prepare('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');
 

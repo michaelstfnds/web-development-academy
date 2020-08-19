@@ -61,20 +61,20 @@
                     <div class="alert alert-danger alert-styled-left">Register Error</div>
                     <?php } ?>
                     <div class="form-group">
-                        <label for="firstName">Full Name</label><br>
-                        <input type="firstName" id="firstName" name="firstName">
+                        <label for="name">Full Name</label><br>
+                        <input type="text" id="name" name="name" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label><br>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="email">Verify your email</label><br>
-                        <input type="email" id="re-email" name="re-email">
+                        <label for="re-email">Verify your email</label><br>
+                        <input type="email" id="re-email" name="re-email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label><br>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-info btn-size">Register</button>

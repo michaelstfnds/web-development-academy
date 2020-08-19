@@ -15,3 +15,4 @@ if (strtolower($_SERVER['REQUEST_METHOD']) != 'post') {
 // Create new user
 $user = new User();
 $user->insert($_REQUEST['name'], $_REQUEST['email'], $_REQUEST['password']);
+

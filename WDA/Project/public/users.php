@@ -16,4 +16,4 @@ $user = new User();
 // print_r($list);
 
 $verified = $user->verify('jim@hotel.com', 'password123');
-var_dump($verified);
+// var_dump($verified);
