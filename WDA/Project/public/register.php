@@ -1,3 +1,16 @@
+<?php
+
+require_once __DIR__ . '/../boot/boot.php';
+
+use Hotel\User;
+
+// Check for existing logged in user
+if (!empty(User::getCurrentUserId())) {
+    header('Location: /Project/public/index.php');die;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

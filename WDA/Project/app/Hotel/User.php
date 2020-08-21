@@ -5,6 +5,11 @@ namespace Hotel;
 use PDO;
 
 class User {
+
+    const TOKEN_KEY = 'asfdhkgjlr;ofijhgbfdklfsadf';
+
+    private static $currentUserId;
+
     private $pdo;
 
     public function __construct() {
@@ -52,8 +57,43 @@ class User {
         return password_verify($password, $user['password']);
     }
 
+    public function generateToken($userId) {
+
+        // Create token payload
+        $payload = [ 'user_id' => $userId,];
+        $payloadEncoded = base64_encode(json_encode($payload));
+        $signature = hash_hmac('sha256', $payloadEncoded, self::TOKEN_KEY);
+
+        return sprintf('%s.%s', $payloadEncoded, $signature);
+    }
+
+    public function getTokenPayload($token) {
+        // Get payload and signature
+        [$payloadEncoded] = explode('.', $token);
+
+        //Get payload
+        return json_decode(base64_decode($payloadEncoded), true);
+    }
+
+    public function verifyToken($token) {
+        //Get payload
+        $payload = $this->getTokenPayload($token);
+        $userId = $payload['user_id'];
+
+        //Generate signature and verify
+        return $this->generateToken($userId) == $token;
+    }
+
     protected function getPdo()
     {
         return $this->pdo;
+    }
+
+    public static function getCurrentUserId() {
+        return self::$currentUserId;
+    }
+
+    public static function setCurrentUserId($userId) {
+        self::$currentUserId = $userId;
     }
 }

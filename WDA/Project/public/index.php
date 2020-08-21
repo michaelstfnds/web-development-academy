@@ -1,3 +1,9 @@
+<?php
+
+require_once __DIR__ . '/../boot/boot.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
