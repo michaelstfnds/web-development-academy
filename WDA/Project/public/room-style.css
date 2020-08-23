@@ -84,6 +84,20 @@ div.divider hr{
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+div.review-list {
+    border-left: 2px solid #465699;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+}
+
+div.add-review {
+    border-left: 2px solid #465699;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+}
+
+/* ---------------------------------------------------- */
+
 header.header-shadow{
     position:relative;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0);
@@ -277,6 +291,10 @@ body > header.login-header {
 }
 .unchecked {
     color: white;
+}
+
+.add-review .unchecked {
+    color: rgb(187, 184, 184);
 }
 
 /* ---------- Hotel info tabs ---------- */

@@ -19,9 +19,21 @@ require_once __DIR__ . '/../boot/boot.php';
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
     crossorigin="anonymous"> -->
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
-    <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
-    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4ce5ded0cf.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="app-style.css">
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+        $( "#datepicker" ).datepicker();
+        $( "#anim" ).on( "change", function() {
+        $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+        });
+    } );
+    </script>
 </head>
 <body class="homepage">
     <header>
@@ -85,9 +97,9 @@ require_once __DIR__ . '/../boot/boot.php';
                     </select>
                     <select name="formRoomType" id="formRoomType">
                         <option value="null" selected>Room Type</option>
-                        <option value="male">1 Person</option>
-                        <option value="female">2 People</option>
-                        <option value="other">3+ People</option>
+                        <option value="singleRoom">Single Room</option>
+                        <option value="doubleRoom">Double Room</option>
+                        <option value="tripleRoom">Triple Room</option>
                     </select>
                     <input type="date" id="checkIn" name="checkIn" placeholder="Check-in Date">
                     <input type="date" id="checkOut" name="checkOut" placeholder="Check-out Date">

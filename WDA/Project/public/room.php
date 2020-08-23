@@ -75,11 +75,11 @@
             <section class="hotel-profile">
                 <h6 class="profile-title">Grande Bretagne - Athens, Syntagma | Reviews:
                     <span>
-                        <i class="fa fa-star unchecked" id="one"></i>
-                        <i class="fa fa-star unchecked" id="two"></i>
-                        <i class="fa fa-star unchecked" id="three"></i>
-                        <i class="fa fa-star unchecked" id="four"></i>
-                        <i class="fa fa-star unchecked" id="five"></i>
+                        <i class="fa fa-star unchecked" id=""></i>
+                        <i class="fa fa-star unchecked" id=""></i>
+                        <i class="fa fa-star unchecked" id=""></i>
+                        <i class="fa fa-star unchecked" id=""></i>
+                        <i class="fa fa-star unchecked" id=""></i>
                     </span>
                     | <i class="fa fa-heart" style="color: white;"></i>
                     <span style="float: right;">Price per night: 500$</span>
@@ -119,6 +119,27 @@
                 <div class="divider">
                     <hr>
                 </div>
+                <section class="reviews">
+                    <div class="review-list">
+                        <h3>Reviews</h3>
+                    </div>
+                    <div class="add-review">
+                        <h3>Add Review</h3>
+                        <span>
+                            <i class="fa fa-star unchecked" id="one"></i>
+                            <i class="fa fa-star unchecked" id="two"></i>
+                            <i class="fa fa-star unchecked" id="three"></i>
+                            <i class="fa fa-star unchecked" id="four"></i>
+                            <i class="fa fa-star unchecked" id="five"></i>
+                        </span>
+                        <textarea name="review" rows="2" cols="95">
+                        Add your review here...
+                        </textarea>
+                        <div style="text-align:center;">
+                        <button type="submit" class="btn btn-info" id="add-review-btn" style="width: 75px;">Submit</button>
+                        </div>
+                    </div>
+                </section>
             </section>
             <div class="clear"></div>
         </section>
