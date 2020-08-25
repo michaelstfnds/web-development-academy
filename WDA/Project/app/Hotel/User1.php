@@ -3,9 +3,8 @@
 namespace Hotel;
 
 use PDO;
-use Support\Configuration\Configuration;
 
-class User {
+class User1 {
 
     const TOKEN_KEY = 'asfdhkgjlr;ofijhgbfdklfsadf';
 
@@ -14,57 +13,22 @@ class User {
     private $pdo;
 
     public function __construct() {
-
-        $config = Configuration::getInstance();
-        $databaseConfig = $config->getConfig()['database'];
-        print_r($databaseConfig);
-
         $this->pdo = new PDO('mysql:host=127.0.0.1;dbname=hotel;charset=UTF8', 'hotel', '123456789', [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"]);
     }
 
     public function getByEmail($email) {
-        $parameters = [
-            ':email' => $email,
-        ];
-        return $this->fetch('SELECT * FROM user WHERE email = :email', $parameters);
+        $statement = $this->getPdo()->prepare('SELECT * FROM user WHERE email = :email');
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getList() {
-
-        return $this->fetchAll('SELECT * FROM user');
-
-    }
-
-    private function fetchAll($sql, $parameters = [], $type = PDO::FETCH_ASSOC) {
-        // Prepare Statement
-        $statement = $this->getPdo()->prepare($sql);
-
-        // Bind Parameters
-        foreach($parameters as $key => $value) {
-            $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
-        }
-
-        // Execute
+        $statement = $this->getPdo()->prepare('SELECT * FROM user');
         $statement->execute();
 
-        // Fetch all
-        return $statement->fetchAll($type);
-    }
-
-    private function fetch($sql, $parameters = [], $type = PDO::FETCH_ASSOC) {
-        // Prepare Statement
-        $statement = $this->getPdo()->prepare($sql);
-
-        // Bind Parameters
-        foreach($parameters as $key => $value) {
-            $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
-        }
-
-        // Execute
-        $statement->execute();
-
-        // Fetch all
-        return $statement->fetch($type);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insert($name, $email, $password) {
