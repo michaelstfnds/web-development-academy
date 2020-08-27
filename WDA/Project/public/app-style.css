@@ -158,7 +158,7 @@ aside.sidebar-menu:after {
 	transform: rotate(-7deg);
 }
 
-#formCity,
+/* #formCity,
 #formRoomType,
 #form-count-guests,
 #checkIn,
@@ -168,9 +168,9 @@ aside.sidebar-menu:after {
     border-radius: 7px;
     background-color: #fafafa;
     margin: 5px 0px 5px 0px;
-}
+} */
 
-form.homepage-form #formCity,
+/* form.homepage-form #formCity,
 form.homepage-form #formRoomType,
 form.homepage-form #checkIn,
 form.homepage-form #checkOut {
@@ -180,6 +180,14 @@ form.homepage-form #checkOut {
     background-color: #fafafa;
     margin-top: 10px;
     margin-bottom: 5px;
+} */
+
+.homepage-form-controll {
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: #fafafa;
+    margin: 10px 0 5px 0;
 }
 
 form.homepage-form button {

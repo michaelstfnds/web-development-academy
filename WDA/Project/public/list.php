@@ -1,3 +1,21 @@
+<?php
+
+require_once __DIR__ . '/../boot/boot.php';
+
+use Hotel\Room;
+
+// Initialize Room service
+$room = new Room();
+
+// Get page parameters
+$city = $_REQUEST['city'];
+$typeId = $_REQUEST['room_type'];
+$checkInDate = $_REQUEST['date_check_in'];
+$checkOutDate = $_REQUEST['date_check_out'];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +74,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="register.html">Sign Up <i class="fas fa-user-plus"></i></a>
                             <a class="dropdown-item" href="login.html">Log In <i class="fas fa-user"></i></a>
-                          </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -70,19 +88,19 @@
                     <h5>FIND THE PERFECT HOTEL</h5>
                     <div class="sidebar-form">
                         <form method="POST" action="list.html">
-                            <select name="form-count-guests" id="form-count-guests">
+                            <select name="form-count-guests" id="form-count-guests" class="homepage-form-controll">
                                 <option value="null" selected>Guests</option>
                                 <option value="male">1</option>
                                 <option value="female">2</option>
                                 <option value="other">3+</option>
                             </select>
-                            <select name="formRoomType" id="formRoomType">
+                            <select name="room_type" id="room_type" class="homepage-form-controll">
                                 <option value="null" selected>Room Type</option>
                                 <option value="male">1 BR</option>
                                 <option value="female">2 BR</option>
                                 <option value="other">Suite</option>
                             </select>
-                            <select name="formCity" id="formCity">
+                            <select name="city" id="city" class="homepage-form-controll">
                                 <option value="null" selected>City</option>
                                 <option value="male">Athens</option>
                                 <option value="female">Mykonos</option>
@@ -90,8 +108,8 @@
                             </select>
                             <label for="vol">0$ <----------> 5000$</label><br>
                             <input type="range" id="price-range" name="price-range" min="0" max="5000">
-                            <input type="date" id="checkIn" name="checkIn" placeholder="Check-in Date">
-                            <input type="date" id="checkOut" name="checkOut" placeholder="Check-out Date">
+                            <input type="date" id="date_check_in" name="date_check_in" placeholder="Check-in Date" class="homepage-form-controll">
+                            <input type="date" id="date_check_out" name="date_check_out" placeholder="Check-out Date" class="homepage-form-controll">
                             <button type="button" class="btn btn-info">FIND HOTEL</button>
                         </form>
                     </div>

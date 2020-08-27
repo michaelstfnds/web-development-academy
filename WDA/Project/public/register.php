@@ -5,9 +5,9 @@ require_once __DIR__ . '/../boot/boot.php';
 use Hotel\User;
 
 // Check for existing logged in user
-if (!empty(User::getCurrentUserId())) {
-    header('Location: /Project/public/index.php');die;
-}
+// if (!empty(User::getCurrentUserId())) {
+//     header('Location: /Project/public/index.php');die;
+// }
 
 ?>
 
@@ -35,15 +35,15 @@ if (!empty(User::getCurrentUserId())) {
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#" style="color: black;">Hotel Stay</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="list.html" style="color: black;">Hotels</a>
+                        <a class="nav-link" href="list.php" style="color: black;">Hotels</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html" style="color: black;">About</a>
+                        <a class="nav-link" href="#" style="color: black;">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" style="color: black;">Contact</a>
@@ -53,9 +53,7 @@ if (!empty(User::getCurrentUserId())) {
                     <!--<li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
                     <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
-                            <i class="glyphicon glyphicon-home"></i> Home
-                        </a>
+                        <a class="nav-link" href="index.php"><i class="glyphicon glyphicon-home"></i>Home</a>
                     </li>
                 </ul>
             </div>
