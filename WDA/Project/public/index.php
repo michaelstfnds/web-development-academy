@@ -101,7 +101,7 @@ $allTypes = $type->getAllTypes();
             <section class="search-form">
                 <form name="searchForm" action="list.php" class="homepage-form" onsubmit="return validateForm()">
                     <select name="city" id="city" class="homepage-form-controll" data-placeholder="City">
-                    <option hidden disabled selected>City</option>
+                        <option hidden disabled selected>City</option>
                         <?php
                             foreach ($cities as $city) {
                         ?>

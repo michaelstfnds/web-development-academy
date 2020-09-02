@@ -3,16 +3,23 @@
 require_once __DIR__ . '/../boot/boot.php';
 
 use Hotel\Room;
+use DateTime;
 
 // Initialize Room service
 $room = new Room();
 
+// Get all cities
+$cities = $room->getCities();
+
 // Get page parameters
-$city = $_REQUEST['city'];
-$typeId = $_REQUEST['room_type'];
+$selectedCity = $_REQUEST['city'];
+$selectedTypeId = $_REQUEST['room_type'];
 $checkInDate = $_REQUEST['date_check_in'];
 $checkOutDate = $_REQUEST['date_check_out'];
 
+// Search for room
+$allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($checkOutDate), $selectedCity, $selectedTypeId);
+//print_r($allAvailableRooms);
 
 ?>
 
@@ -57,7 +64,7 @@ $checkOutDate = $_REQUEST['date_check_out'];
                     <!--<li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
                     <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="index.php">
                             <i class="fas fa-home"></i> Home
                         </a>
                     </li>
@@ -101,15 +108,19 @@ $checkOutDate = $_REQUEST['date_check_out'];
                                 <option value="other">Suite</option>
                             </select>
                             <select name="city" id="city" class="homepage-form-controll">
-                                <option value="null" selected>City</option>
-                                <option value="male">Athens</option>
-                                <option value="female">Mykonos</option>
-                                <option value="other">Chania</option>
+                            <option hidden disabled selected>City</option>
+                                <?php
+                                    foreach ($cities as $city) {
+                                ?>
+                                    <option <?php echo $selectedCity==$city ? 'selected="selected"' : ''; ?> value="<?php echo $city; ?>"><?php echo $city; ?></option>
+                                <?php
+                                    }
+                                ?>
                             </select>
                             <label for="vol">0$ <----------> 5000$</label><br>
                             <input type="range" id="price-range" name="price-range" min="0" max="5000">
-                            <input type="date" id="date_check_in" name="date_check_in" placeholder="Check-in Date" class="homepage-form-controll">
-                            <input type="date" id="date_check_out" name="date_check_out" placeholder="Check-out Date" class="homepage-form-controll">
+                            <input type="date" id="date_check_in" name="date_check_in" value="<?php echo $checkInDate; ?>" placeholder="Check-in Date" class="homepage-form-controll">
+                            <input type="date" id="date_check_out" name="date_check_out" value="<?php echo $checkOutDate; ?>" placeholder="Check-out Date" class="homepage-form-controll">
                             <button type="button" class="btn btn-info">FIND HOTEL</button>
                         </form>
                     </div>
@@ -117,23 +128,39 @@ $checkOutDate = $_REQUEST['date_check_out'];
             </aside>
             <section class="hotel-list">
                 <h6 class="search-results-title">Search Results</h6>
-                <article class="hotel">
-                    <aside class="article-media">
-                        <img src="assets/images/comp/hotelroom1.jpg" alt="" width="100%" height="auto">
-                    </aside>
-                    <main class="hotel-info">
-                        <h4 class="hotel-name"> Hotel Grande Bretagne</h5>
-                        <p  class="hotel-address">Athens, Syntagma</p>
-                        <p class="hotel-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <button type="button" class="btn btn-info">Go to Room Page</button>
-                    </main>
-                    <div class="clear"></div>
-                    <div class="hotel-footer">
-                        <p class="price"> Per Night: 350$</p>
-                        <p class="tag">ppppppppppppppppp</p>
-                    </div>
-                </article>
-                <article class="hotel">
+                <section>
+                    <?php
+                        foreach ($allAvailableRooms as $availableRoom) {
+                    ?>
+                    <article class="hotel">
+                        <aside class="article-media">
+                            <img src="assets/images/hotel-rooms/<?php echo $availableRoom['photo_url']; ?>" alt="" width="100%" height="auto">
+                        </aside>
+                        <main class="hotel-info">
+                            <h4 class="hotel-name"><?php echo $availableRoom['name']; ?></h4>
+                            <p  class="hotel-address"><?php echo $availableRoom['city'] . ", " . $availableRoom[':area']; ?></p>
+                            <p class="hotel-description"><?php echo $availableRoom['description_short']; ?></p>
+                            <button type="button" class="btn btn-info">Go to Room Page</button>
+                        </main>
+                        <div class="clear"></div>
+                        <div class="hotel-footer">
+                            <p class="price"> Per Night: <?php echo $availableRoom['price']; ?>$</p>
+                            <p class="tag">ppppppppppppppppp</p>
+                        </div>
+                    </article>
+                    <?php
+                        }
+                    ?>
+                </section>
+                <?php
+                    if (count($allAvailableRooms) == 0) {
+                ?>
+                    <h2>There are no rooms!</h2>
+                    <hr>
+                <?php
+                    }
+                ?>
+                <!-- <article class="hotel">
                     <aside class="article-media">
                         <img src="assets/images/comp/hotelroom2.jpg" alt="" width="100%" height="auto">
                     </aside>
@@ -164,7 +191,7 @@ $checkOutDate = $_REQUEST['date_check_out'];
                         <p class="price"> Per Night: 350$</p>
                         <p class="tag">ppppppppppppppppp</p>
                     </div>
-                </article>
+                </article> -->
             </section>
             <div class="clear"></div>
         </section>
