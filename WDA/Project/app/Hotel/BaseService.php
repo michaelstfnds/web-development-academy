@@ -44,7 +44,10 @@ class BaseService {
         }
 
         // Execute
-        $statement->execute();
+        $status = $statement->execute();
+        if (!$status) {
+            throw new Exception($statement->errorInfo()[2]);
+        }
 
         // Fetch all
         return $statement->fetchAll($type);
@@ -61,6 +64,9 @@ class BaseService {
 
         // Execute
         $statement->execute();
+        if (!$status) {
+            throw new Exception($statement->errorInfo()[2]);
+        }
 
         // Fetch all
         return $statement->fetch($type);

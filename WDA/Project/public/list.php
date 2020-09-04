@@ -30,7 +30,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotels</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" -->
     <!-- rel="stylesheet"> -->
