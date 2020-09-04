@@ -12,9 +12,13 @@ class Room extends BaseService {
 
         // Get all cities
         $cities = [];
-        $rows = $this->fetchAll('SELECT DISTINCT city FROM room');
-        foreach($rows as $row) {
-            $cities[] = $row['city'];
+        try {
+            $rows = $this->fetchAll('SELECT DISTINCT city FROM room');
+            foreach($rows as $row) {
+                $cities[] = $row['city'];
+            }
+        } catch (Exception $ex) {
+            // Log Error
         }
 
         return $cities;

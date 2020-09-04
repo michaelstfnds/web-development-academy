@@ -25,18 +25,30 @@ class User extends BaseService {
     }
 
     public function insert($name, $email, $password) {
-        //Prepare statement
-        $statement = $this->getPdo()->prepare('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');
 
         //Hash password
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-        //Bind parameters
-        $statement->bindParam(':name', $name, PDO::PARAM_STR);
-        $statement->bindParam(':email', $email, PDO::PARAM_STR);
-        $statement->bindParam(':password', $passwordHash, PDO::PARAM_STR);
+        // Prepare parameters
+        $parameters = [
+            ':name' => $name,
+            ':email' => $email,
+            ':password' => $passwordHash,
+        ];
+        $rows = $this->execute('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)', $parameters);
 
-        $rows = $statement->execute();
+        // //Prepare statement
+        // $statement = $this->getPdo()->prepare('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');
+
+        // //Hash password
+        // $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+
+        // //Bind parameters
+        // $statement->bindParam(':name', $name, PDO::PARAM_STR);
+        // $statement->bindParam(':email', $email, PDO::PARAM_STR);
+        // $statement->bindParam(':password', $passwordHash, PDO::PARAM_STR);
+
+        // $rows = $statement->execute();
 
         return $rows == 1;
     }
