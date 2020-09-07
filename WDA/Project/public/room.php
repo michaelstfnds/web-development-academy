@@ -1,3 +1,29 @@
+<?php
+
+require_once __DIR__ . '/../boot/boot.php';
+
+use Hotel\Room;
+use DateTime;
+
+// Initialize Room service
+$room = new Room();
+
+// Check for room id
+$roomId = $_REQUEST['room_id'];
+if (empty($roomId)) {
+    header('Location: index.php');
+    die;
+}
+
+// Load room info
+$roomInfo = $room->get($roomId);
+if (empty($roomInfo)) {
+    header('Location: index.php');
+    die;
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +99,7 @@
     <main>
         <section class="container-xl">
             <section class="hotel-profile">
-                <h6 class="profile-title">Grande Bretagne - Athens, Syntagma | Reviews:
+                <h6 class="profile-title"> <?php echo sprintf('%s - %s, %s', $roomInfo['name'], $roomInfo['city'], $roomInfo['area']) ?> | Reviews:
                     <span>
                         <i class="fa fa-star unchecked" id=""></i>
                         <i class="fa fa-star unchecked" id=""></i>
@@ -87,9 +113,9 @@
                 <div class="hotel-room-media">
                     <!-- <img src="assets/images/comp/hotelroom1.jpg" alt="" width="100%" height="auto"> -->
                     <div class="w3-content w3-display-container" style="max-width:700px">
-                        <img class="mySlides" src="assets/images/comp/hotelroom1.jpg" style="width:100%">
-                        <img class="mySlides" src="assets/images/comp/hotelroom4.jpg" style="width:100%">
-                        <img class="mySlides" src="assets/images/comp/hotelroom5.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/images/hotel-rooms/hotelroom1.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/images/hotel-rooms/hotelroom4.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/images/hotel-rooms/hotelroom5.jpg" style="width:100%">
                         <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
                             <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                             <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -100,11 +126,46 @@
                     </div>
                 </div>
                 <div class="profile-info tab">
-                    <li>COUNT OF GUESTS</li>
-                    <li>TYPE OF ROOM</li>
-                    <li>PARKING</li>
-                    <li>WIFI</li>
-                    <li>PET FRIENDLY</li>
+                    <li>
+                        <div>
+                            COUNT OF GUESTS
+                        </div>
+                        <div>
+                            <i class="fas fa-user"></i> #
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            TYPE OF ROOM
+                        </div>
+                        <div>
+                            <i class="fas fa-bed"></i> #
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            PARKING
+                        </div>
+                        <div>
+                            <i class="fas fa-parking"></i> #
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            WIFI
+                        </div>
+                        <div>
+                            <i class="fas fa-wifi"></i> #
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            PET FRIENDLY
+                        </div>
+                        <div>
+                            <i class="fas fa-dog"></i> #
+                        </div>
+                    </li>
                 </div>
                 <div class="room-description">
                     <h3>Room Description</h3>
@@ -120,9 +181,10 @@
                     <hr>
                 </div>
                 <section class="reviews">
-                    <div class="review-list">
+                    <div>
                         <h3>Reviews</h3>
                     </div>
+                    <div class="review-list"></div>
                     <div class="add-review">
                         <h3>Add Review</h3>
                         <span>

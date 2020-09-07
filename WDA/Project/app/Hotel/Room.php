@@ -8,6 +8,13 @@ use Hotel\BaseService;
 
 class Room extends BaseService {
 
+    public function get($roomId) {
+        $parameters = [
+            ':room_id' => $roomId,
+        ];
+        return $this->fetch('SELECT * FROM room WHERE room_id = :room_id', $parameters);
+    }
+
     public function getCities() {
 
         // Get all cities

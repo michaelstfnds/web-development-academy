@@ -48,7 +48,7 @@ h6 {
     color: #fff !important;
     background: #465699 !important;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 0 10px 0;
 }
 
@@ -308,7 +308,7 @@ body > header.login-header {
 .tab li {
     display: inline-block;
     width: 19%;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     font-size: 12px;
     border-inline-end-style: dashed;
@@ -318,7 +318,7 @@ body > header.login-header {
 .tab li:last-child {
     display: inline-block;
     width: 19%;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     font-size: 12px;
     border-inline-end-style: none;
