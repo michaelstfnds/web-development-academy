@@ -41,25 +41,26 @@ if (empty($roomInfo)) {
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="room-style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+    <!-- <style>
     .mySlides {display:none}
     .w3-left, .w3-right, .w3-badge {cursor:pointer}
     .w3-badge {height:13px;width:13px;padding:0}
-    </style>
+    </style> -->
 </head>
 <body>
     <header class="header-shadow">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" style="color: black;">Hotel Stay</a>
+            <div style="width:900px;margin:auto;">
+            <!-- <a class="navbar-brand" style="color: black;">Hotel Stay</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="list.html" style="color: black;" >Hotels</a>
+                        <a class="nav-link" href="list.php" style="color: black;" >Hotels</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="about.html" style="color: black;">About</a>
@@ -72,7 +73,7 @@ if (empty($roomInfo)) {
                     <!--<li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
                     <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="index.php">
                             <i class="fas fa-home"></i> Home
                         </a>
                     </li>
@@ -93,26 +94,46 @@ if (empty($roomInfo)) {
                     </li>
                 </ul>
             </div>
+        </div>
         </nav>
     </header>
 
     <main>
         <section class="container-xl">
             <section class="hotel-profile">
-                <h6 class="profile-title"> <?php echo sprintf('%s - %s, %s', $roomInfo['name'], $roomInfo['city'], $roomInfo['area']) ?> | Reviews:
-                    <span>
-                        <i class="fa fa-star unchecked" id=""></i>
-                        <i class="fa fa-star unchecked" id=""></i>
-                        <i class="fa fa-star unchecked" id=""></i>
-                        <i class="fa fa-star unchecked" id=""></i>
-                        <i class="fa fa-star unchecked" id=""></i>
+                <div class="profile-title"> <?php echo sprintf('%s - %s, %s', $roomInfo['name'], $roomInfo['city'], $roomInfo['area']) ?> |
+                    <span class="">
+                        <span>Reviews:</span>
+                        <?php
+                            $roomAvgReview = $roomInfo['avg_reviews'];
+                        ?>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star unchecked"></span>
+                        <span class="fa fa-star unchecked"></span>
+                        <span class="fa fa-star unchecked"></span>
+                        |
                     </span>
-                    | <i class="fa fa-heart" style="color: white;"></i>
-                    <span style="float: right;">Price per night: 500$</span>
-                </h6>
+                    <span class="fa fa-heart" style="color: white;"></span>
+                    <!-- <span>
+                        <form name="favoriteForm" method="post" id="favoriteForm" class="favoriteForm" 
+                        action="actions/favorute.php">
+                            <input type="hidden" name="room_id" value="1">
+                            <input type="hidden" name="is_favorite" value="1">
+                            <span class="search_stars_span">
+                                <ul class="fav_star">
+                                    <li class="star selected" id="fav">❤</li>
+                                </ul>
+                            </span>
+                        </form>
+                    </span> -->
+                    <span style="float: right;">Price per night: <?php echo $roomInfo['price'];?>€</span>
+                </div>
                 <div class="hotel-room-media">
-                    <!-- <img src="assets/images/comp/hotelroom1.jpg" alt="" width="100%" height="auto"> -->
-                    <div class="w3-content w3-display-container" style="max-width:700px">
+                    <div style="max-width:700px;">
+                        <img src="assets/images/hotel-rooms/hotelroom1.jpg" alt="" width="100%" height="auto">
+                    </div>
+                    <!-- <div class="w3-content w3-display-container" style="max-width:700px">
                         <img class="mySlides" src="assets/images/hotel-rooms/hotelroom1.jpg" style="width:100%">
                         <img class="mySlides" src="assets/images/hotel-rooms/hotelroom4.jpg" style="width:100%">
                         <img class="mySlides" src="assets/images/hotel-rooms/hotelroom5.jpg" style="width:100%">
@@ -123,7 +144,7 @@ if (empty($roomInfo)) {
                             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="profile-info tab">
                     <li>

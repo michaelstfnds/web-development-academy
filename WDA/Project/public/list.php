@@ -39,12 +39,13 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="app-style.css">
+    <link rel="stylesheet" href="list-style.css">
 </head>
 <body>
     <header class="header-shadow">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" style="color: black;">Hotel Stay</a>
+            <div style="width:900px;margin:auto;">
+            <!-- <a class="navbar-brand" style="color: black;">Hotel Stay</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,6 +86,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                     </li>
                 </ul>
             </div>
+        </div>
         </nav>
     </header>
 
