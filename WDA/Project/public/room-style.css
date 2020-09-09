@@ -313,6 +313,11 @@ body > header.login-header {
 }
 
 /* ---------- Hotel info tabs ---------- */
+
+.amen-title {
+    font-weight: 400;
+}
+
 .tab {
     list-style-type: none;
     text-align: center;

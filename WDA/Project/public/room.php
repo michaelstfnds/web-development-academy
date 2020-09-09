@@ -3,10 +3,13 @@
 require_once __DIR__ . '/../boot/boot.php';
 
 use Hotel\Room;
+use Hotel\Favorite;
+use Hotel\User;
 use DateTime;
 
 // Initialize Room service
 $room = new Room();
+$favorite = new Favorite();
 
 // Check for room id
 $roomId = $_REQUEST['room_id'];
@@ -21,6 +24,12 @@ if (empty($roomInfo)) {
     header('Location: index.php');
     die;
 }
+
+//Get current user id
+$userId = User::getCurrentUserId();
+
+// Checl if room is favorite for current user
+$isFavorite = $favorite->isFavorite($roomId, $userId);
 
 
 ?>
@@ -106,32 +115,38 @@ if (empty($roomInfo)) {
                         <span>Reviews:</span>
                         <?php
                             $roomAvgReview = $roomInfo['avg_reviews'];
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($roomAvgReview > $i) {
+                                    ?>
+                                    <span class="fa fa-star checked"></span>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <span class="fa fa-star unchecked"></span>
+                                    <?php
+                                }
+                            }
                         ?>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star unchecked"></span>
-                        <span class="fa fa-star unchecked"></span>
-                        <span class="fa fa-star unchecked"></span>
                         |
                     </span>
-                    <span class="fa fa-heart" style="color: white;"></span>
-                    <!-- <span>
+                    <!-- <span class="fa fa-heart" style="color: white;"></span> -->
+                    <span>
                         <form name="favoriteForm" method="post" id="favoriteForm" class="favoriteForm" 
-                        action="actions/favorute.php">
-                            <input type="hidden" name="room_id" value="1">
-                            <input type="hidden" name="is_favorite" value="1">
+                        action="actions/favorite.php">
+                            <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
+                            <input type="hidden" name="is_favorite" value="<?php echo $isFavorite ? '1' : '0'; ?>">
                             <span class="search_stars_span">
                                 <ul class="fav_star">
-                                    <li class="star selected" id="fav">❤</li>
+                                    <li class="star <?php echo $isFavorite ? 'selected' : ''; ?>" id="fav">❤</li>
                                 </ul>
                             </span>
                         </form>
-                    </span> -->
+                    </span>
                     <span style="float: right;">Price per night: <?php echo $roomInfo['price'];?>€</span>
                 </div>
                 <div class="hotel-room-media">
                     <div style="max-width:700px;">
-                        <img src="assets/images/hotel-rooms/hotelroom1.jpg" alt="" width="100%" height="auto">
+                        <img src="assets/images/hotel-rooms/<?php echo $roomInfo['photo_url']; ?>" alt="" width="100%" height="auto">
                     </div>
                     <!-- <div class="w3-content w3-display-container" style="max-width:700px">
                         <img class="mySlides" src="assets/images/hotel-rooms/hotelroom1.jpg" style="width:100%">
@@ -148,43 +163,75 @@ if (empty($roomInfo)) {
                 </div>
                 <div class="profile-info tab">
                     <li>
-                        <div>
+                        <div class="amen-title">
                             COUNT OF GUESTS
                         </div>
                         <div>
-                            <i class="fas fa-user"></i> #
+                            <i class="fas fa-user"></i> <?php echo $roomInfo['count_of_guests'];?>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="amen-title">
                             TYPE OF ROOM
                         </div>
                         <div>
-                            <i class="fas fa-bed"></i> #
+                            <i class="fas fa-bed"></i> 
+                            <?php
+                            if ($roomInfo['type_id'] == 1) {
+                                echo "Single Room" ;
+                            } elseif ($roomInfo['type_id'] == 2) {
+                                echo "Double Room" ;
+                            } elseif ($roomInfo['type_id'] == 3) {
+                                echo "Triple Room" ;
+                            } else {
+                                echo "Fourfold Room" ;
+                            }
+                            ?>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="amen-title">
                             PARKING
                         </div>
                         <div>
-                            <i class="fas fa-parking"></i> #
+                            <i class="fas fa-parking"></i> 
+                            <?php
+                                if ($roomInfo['parking'] == 1) {
+                                    echo "Yes";
+                                } else {
+                                    echo "No";
+                                }
+                            ?>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="amen-title">
                             WIFI
                         </div>
                         <div>
-                            <i class="fas fa-wifi"></i> #
+                            <i class="fas fa-wifi"></i> 
+                            <?php
+                                if ($roomInfo['wifi'] == 1) {
+                                    echo "Yes";
+                                } else {
+                                    echo "No";
+                                }
+                            ?>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="amen-title">
                             PET FRIENDLY
                         </div>
                         <div>
-                            <i class="fas fa-dog"></i> #
+                            <i class="fas fa-dog"></i> 
+                            <?php
+                                if ($roomInfo['pet_friendly'] == 1) {
+                                    echo "Yes";
+                                } else {
+                                    echo "No";
+                                }
+                            ?>
                         </div>
                     </li>
                 </div>
@@ -234,9 +281,20 @@ if (empty($roomInfo)) {
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3tJMMl11BcfeDoHeqPbXvGObMvurT8Tw&callback=initMap"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnCjGr_c6T1dAgRtnbSEegZTm1cRwrGvs&callback=initMap"></script>
     <script src="slider-js.js"></script>
     <script src="rating.js"></script>
-    <script src="google-maps.js"></script>
+    <script>
+        function initMap() {
+        // The location of Uluru
+        //var uluru = {lat: 37.976604, lng: 23.735558};
+        var uluru = {lat: <?php echo $roomInfo['location_lat'];?>, lng: <?php echo $roomInfo['location_long'];?>};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 15, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
 </body>
 </html>
