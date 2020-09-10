@@ -35,7 +35,10 @@ class User extends BaseService {
             ':email' => $email,
             ':password' => $passwordHash,
         ];
-        $rows = $this->execute('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)', $parameters);
+        $rows = $this->execute('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)', 
+        $parameters);
+
+        return $rows == 1;
 
         // //Prepare statement
         // $statement = $this->getPdo()->prepare('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');
@@ -50,7 +53,6 @@ class User extends BaseService {
 
         // $rows = $statement->execute();
 
-        return $rows == 1;
     }
 
     public function verify($email, $password) {

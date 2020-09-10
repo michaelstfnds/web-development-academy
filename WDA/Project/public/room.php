@@ -15,14 +15,16 @@ $favorite = new Favorite();
 $roomId = $_REQUEST['room_id'];
 if (empty($roomId)) {
     header('Location: index.php');
-    die;
+
+    return;
 }
 
 // Load room info
 $roomInfo = $room->get($roomId);
 if (empty($roomInfo)) {
     header('Location: index.php');
-    die;
+
+    return;
 }
 
 //Get current user id
@@ -111,7 +113,7 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
         <section class="container-xl">
             <section class="hotel-profile">
                 <div class="profile-title"> <?php echo sprintf('%s - %s, %s', $roomInfo['name'], $roomInfo['city'], $roomInfo['area']) ?> |
-                    <span class="">
+                    <div class="title-review">
                         <span>Reviews:</span>
                         <?php
                             $roomAvgReview = $roomInfo['avg_reviews'];
@@ -128,9 +130,16 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                             }
                         ?>
                         |
-                    </span>
-                    <!-- <span class="fa fa-heart" style="color: white;"></span> -->
-                    <span>
+                    </div>
+                    <div class="fav">
+                        <form name="favoriteForm" method="post" id="favoriteForm" class="favoriteForm" 
+                            action="actions/favorite.php">
+                            <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
+                            <input type="hidden" name="is_favorite" value="<?php echo $isFavorite ? '1' : '0'; ?>">
+                            <li class="fa fa-heart <?php echo $isFavorite ? 'selected' : ''; ?>" id="fav" ></li>
+                        </form>
+                    </div>
+                    <!-- <span>
                         <form name="favoriteForm" method="post" id="favoriteForm" class="favoriteForm" 
                         action="actions/favorite.php">
                             <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
@@ -141,8 +150,9 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                                 </ul>
                             </span>
                         </form>
-                    </span>
-                    <span style="float: right;">Price per night: <?php echo $roomInfo['price'];?>€</span>
+                    </span> -->
+                    <span class="room-price">Price per night: <?php echo $roomInfo['price'];?>€</span>
+                    <div class="clear"></div>
                 </div>
                 <div class="hotel-room-media">
                     <div style="max-width:700px;">

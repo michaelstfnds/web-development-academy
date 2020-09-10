@@ -54,13 +54,28 @@ section.hotel-profile {
     margin: 10px 0 10px 0;
 }
 
-.title-reviews {
-    float: right;
-    /* width: 200px; */
+.title-review {
+    display: inline-block;
 }
 
 .hotel-room-media {
     
+}
+
+.fav {
+    display: inline-block;
+}
+
+.favoriteForm {
+    display: inline-block;
+}
+
+.selected {
+    color: red !important;
+}
+
+.room-price {
+    float: right;
 }
 
 .hotel-profile div.profile-info {
