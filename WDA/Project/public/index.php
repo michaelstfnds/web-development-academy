@@ -22,7 +22,7 @@ $allTypes = $type->getAllTypes();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hotel Stay</title>
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
@@ -32,19 +32,21 @@ $allTypes = $type->getAllTypes();
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="app-style.css">
-    <!-- Datepicker -->
-    <link rel="stylesheet" href="/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="assets/jquery/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="assets/jquery/jquery-1.12.4.js"></script>
+    <script src="assets/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
-    // $( function() {
-    //     $( "#datepicker" ).datepicker();
-    //     $( "#anim" ).on( "change", function() {
-    //     $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
-    //     });
-    // } );
-    // </script>
+    $( function() {
+
+        // Select menu
+        //$( "#city" ).selectmenu();
+        //$( "#room_type" ).selectmenu();
+
+        $( "#datepicker1" ).datepicker();
+        $( "#datepicker2" ).datepicker();
+        
+    } );
+    </script>
 </head>
 <body class="homepage">
     <header>
@@ -120,8 +122,8 @@ $allTypes = $type->getAllTypes();
                             }
                         ?>
                     </select>
-                    <input type="date" id="date_check_in" name="date_check_in" placeholder="Check-in Date" class="homepage-form-controll">
-                    <input type="date" id="date_check_out" name="date_check_out" placeholder="Check-out Date" class="homepage-form-controll">
+                    <input type="text" id="datepicker1" name="date_check_in" placeholder="Check-in Date" class="homepage-form-controll">
+                    <input type="text" id="datepicker2" name="date_check_out" placeholder="Check-out Date" class="homepage-form-controll">
                     <button type="submit" class="btn btn-info">Search</button>
                 </form>
             </section>
@@ -134,5 +136,7 @@ $allTypes = $type->getAllTypes();
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/jquery/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="assets/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>

@@ -40,8 +40,36 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="list-style.css">
+    <link rel="stylesheet" href="assets/jquery/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="assets/jquery/jquery-1.12.4.js"></script>
+    <script src="assets/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+
+        // Select menu
+        //$( "#city" ).selectmenu();
+        //$( "#room_type" ).selectmenu();
+
+        $( "#datepicker1" ).datepicker();
+        $( "#datepicker2" ).datepicker();
+
+        // Slider
+        $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 600,
+      values: [ 0, 600 ],
+      slide: function( event, ui ) {
+        $( "#amount1" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount2" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+    } );
+    </script>
 </head>
-<body>
+<body class="list-page">
     <header class="header-shadow">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div style="width:900px;margin:auto;">
@@ -119,10 +147,15 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                                     }
                                 ?>
                             </select>
-                            <label for="vol">0$ <----------> 5000$</label><br>
-                            <input type="range" id="price-range" name="price-range" min="0" max="5000">
-                            <input type="date" id="date_check_in" name="date_check_in" value="<?php echo $checkInDate; ?>" placeholder="Check-in Date" class="homepage-form-controll">
-                            <input type="date" id="date_check_out" name="date_check_out" value="<?php echo $checkOutDate; ?>" placeholder="Check-out Date" class="homepage-form-controll">
+                            <div class="price-slider">
+                                    <p class="f-price" id="amount1">0$</p>
+                                    <p class="l-price" id="amount2">600$</p>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="slider-range" class="price-range"></div>
+                            <!-- <input type="range" id="price-range" name="price-range" min="0" max="5000"> -->
+                            <input type="text" id="datepicker1" name="date_check_in" value="<?php echo $checkInDate; ?>" placeholder="Check-in Date" class="homepage-form-controll">
+                            <input type="text" id="datepicker2" name="date_check_out" value="<?php echo $checkOutDate; ?>" placeholder="Check-out Date" class="homepage-form-controll">
                             <button type="button" class="btn btn-info">FIND HOTEL</button>
                         </form>
                     </div>
@@ -205,5 +238,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/jquery/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="assets/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>

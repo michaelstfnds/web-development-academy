@@ -40,7 +40,7 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel: Grande Bretagne</title>
+    <title><?php echo $roomInfo['name'] ?></title>
     <link rel="shortcut icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
@@ -264,7 +264,7 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                     </div>
                     <div class="review-list"></div>
                     <div class="add-review">
-                        <h3>Add Review</h3>
+                        <h3>Add A Review</h3>
                         <span>
                             <i class="fa fa-star unchecked" id="one"></i>
                             <i class="fa fa-star unchecked" id="two"></i>
@@ -272,9 +272,7 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                             <i class="fa fa-star unchecked" id="four"></i>
                             <i class="fa fa-star unchecked" id="five"></i>
                         </span>
-                        <textarea name="review" rows="2" cols="95">
-                        Add your review here...
-                        </textarea>
+                        <textarea name="review" rows="2" cols="95">Add your review here...</textarea>
                         <div style="text-align:center;">
                         <button type="submit" class="btn btn-info" id="add-review-btn" style="width: 75px;">Submit</button>
                         </div>
