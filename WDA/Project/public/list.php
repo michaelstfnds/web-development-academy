@@ -4,12 +4,17 @@ require_once __DIR__ . '/../boot/boot.php';
 
 use Hotel\Room;
 use DateTime;
+use Hotel\RoomType;
 
 // Initialize Room service
 $room = new Room();
 
 // Get all cities
 $cities = $room->getCities();
+
+// Get all room types
+$type = new RoomType();
+$allTypes = $type->getAllTypes();
 
 // Get page parameters
 $selectedCity = $_REQUEST['city'];
@@ -108,8 +113,8 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                             <li><a href="#">Login <i class="fas fa-user"></i></a></li>
                         </ul> -->
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="register.html">Sign Up <i class="fas fa-user-plus"></i></a>
-                            <a class="dropdown-item" href="login.html">Log In <i class="fas fa-user"></i></a>
+                            <a class="dropdown-item" href="register.php">Sign Up <i class="fas fa-user-plus"></i></a>
+                            <a class="dropdown-item" href="login.php">Log In <i class="fas fa-user"></i></a>
                         </div>
                     </li>
                 </ul>
@@ -124,7 +129,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                 <section>
                     <h5>FIND THE PERFECT HOTEL</h5>
                     <div class="sidebar-form">
-                        <form method="POST" action="list.html">
+                        <form method="POST" action="list.php">
                             <select name="form-count-guests" id="form-count-guests" class="homepage-form-controll">
                                 <option value="null" selected>Guests</option>
                                 <option value="male">1</option>
@@ -132,10 +137,14 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                                 <option value="other">3+</option>
                             </select>
                             <select name="room_type" id="room_type" class="homepage-form-controll">
-                                <option value="null" selected>Room Type</option>
-                                <option value="male">1 BR</option>
-                                <option value="female">2 BR</option>
-                                <option value="other">Suite</option>
+                                <option hidden disabled selected>Room Type</option>
+                                <?php
+                                    foreach ($allTypes as $type) {
+                                ?>
+                                    <option <?php echo $selectedTypeId == $type ? 'selected="selected"' : ''; ?> value="<?php echo $city; ?>"><?php echo $city; ?></option>
+                                <?php
+                                    }
+                                ?>
                             </select>
                             <select name="city" id="city" class="homepage-form-controll">
                             <option hidden disabled selected>City</option>

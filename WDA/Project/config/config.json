@@ -3,6 +3,6 @@
         "host": "127.0.0.1",
         "dbname": "hotel",
         "username": "hotel",
-        "password": "123456789"
+        "password": "password"
     }
 }

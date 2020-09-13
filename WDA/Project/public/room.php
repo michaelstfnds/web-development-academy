@@ -44,27 +44,16 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
     <link rel="shortcut icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" -->
-    <!-- rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-    crossorigin="anonymous"> -->
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="room-style.css">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <style>
-    .mySlides {display:none}
-    .w3-left, .w3-right, .w3-badge {cursor:pointer}
-    .w3-badge {height:13px;width:13px;padding:0}
-    </style> -->
 </head>
 <body>
     <header class="header-shadow">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div style="width:900px;margin:auto;">
-            <!-- <a class="navbar-brand" style="color: black;">Hotel Stay</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -73,16 +62,8 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                     <li class="nav-item">
                         <a class="nav-link" href="list.php" style="color: black;" >Hotels</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="about.html" style="color: black;">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: black;">Contact</a>
-                    </li> -->
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <!--<li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
-                    <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">
                             <i class="fas fa-home"></i> Home
@@ -93,14 +74,9 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                         <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user"></i> Profile
                         </a>
-                        <!-- <ul class="dropdown-menu">
-                            <li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Login <i class="fas fa-user"></i></a></li>
-                        </ul> -->
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="register.html">Sign Up <i class="fas fa-user-plus"></i></a>
-                            <a class="dropdown-item" href="login.html">Log In <i class="fas fa-user"></i></a>
+                            <a class="dropdown-item" href="register.php">Sign Up <i class="fas fa-user-plus"></i></a>
+                            <a class="dropdown-item" href="login.php">Log In <i class="fas fa-user"></i></a>
                         </div>
                     </li>
                 </ul>
@@ -133,24 +109,12 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                     </div>
                     <div class="fav">
                         <form name="favoriteForm" method="post" id="favoriteForm" class="favoriteForm" 
-                            action="actions/favorite.php">
+                            action="actions/favorite.php" >
                             <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
                             <input type="hidden" name="is_favorite" value="<?php echo $isFavorite ? '1' : '0'; ?>">
                             <li class="fa fa-heart <?php echo $isFavorite ? 'selected' : ''; ?>" id="fav" ></li>
                         </form>
                     </div>
-                    <!-- <span>
-                        <form name="favoriteForm" method="post" id="favoriteForm" class="favoriteForm" 
-                        action="actions/favorite.php">
-                            <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
-                            <input type="hidden" name="is_favorite" value="<?php echo $isFavorite ? '1' : '0'; ?>">
-                            <span class="search_stars_span">
-                                <ul class="fav_star">
-                                    <li class="star <?php echo $isFavorite ? 'selected' : ''; ?>" id="fav">❤</li>
-                                </ul>
-                            </span>
-                        </form>
-                    </span> -->
                     <span class="room-price">Price per night: <?php echo $roomInfo['price'];?>€</span>
                     <div class="clear"></div>
                 </div>
@@ -158,18 +122,6 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                     <div style="max-width:700px;">
                         <img src="assets/images/hotel-rooms/<?php echo $roomInfo['photo_url']; ?>" alt="" width="100%" height="auto">
                     </div>
-                    <!-- <div class="w3-content w3-display-container" style="max-width:700px">
-                        <img class="mySlides" src="assets/images/hotel-rooms/hotelroom1.jpg" style="width:100%">
-                        <img class="mySlides" src="assets/images/hotel-rooms/hotelroom4.jpg" style="width:100%">
-                        <img class="mySlides" src="assets/images/hotel-rooms/hotelroom5.jpg" style="width:100%">
-                        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="profile-info tab">
                     <li>
@@ -292,6 +244,7 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnCjGr_c6T1dAgRtnbSEegZTm1cRwrGvs&callback=initMap"></script>
     <script src="slider-js.js"></script>
     <script src="rating.js"></script>
+    <script src="favorite.js"></script>
     <script>
         function initMap() {
         // The location of Uluru

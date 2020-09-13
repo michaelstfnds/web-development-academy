@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="list.html" style="color: black;">Hotels</a>
+                        <a class="nav-link" href="list.php" style="color: black;">Hotels</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html" style="color: black;">About</a>
+                        <a class="nav-link" href="" style="color: black;">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" style="color: black;">Contact</a>
@@ -40,7 +40,7 @@
                     <!--<li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
                     <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="index.php">
                             <i class="glyphicon glyphicon-home"></i> Home
                         </a>
                     </li>
@@ -56,7 +56,10 @@
             </div>
             <hr>
             <div class="login-form">
-                <form method="POST" action="">
+                <form method="POST" action="actions/login.php">
+                    <?php if (!empty($_GET['error'])) { ?>
+                    <div class="alert alert-danger alert-styled-left">Login Error</div>
+                    <?php } ?>
                     <label for="email">Email</label><br>
                     <input type="email" id="email" name="email"><br>
                     <label for="password">Password</label><br>

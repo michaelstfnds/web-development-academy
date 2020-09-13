@@ -43,9 +43,6 @@ header.header-shadow:after{
     border-radius:100%;
 }
 
-/* header > nav div ul li > span.divider {
-    font-size: 25px;
-} */
 
 .divider {
     font-size: 25px;
@@ -66,9 +63,10 @@ aside.sidebar-menu {
 }
 
 aside.sidebar-menu section h6 {
-    margin: 10px auto 10px auto;
+    margin: 10px auto 10px 20px;
     font-weight: 300 !important;
     text-align: center;
+    color: #465699;
 }
 
 main aside.sidebar-menu section div.profile-sidebar {
@@ -118,88 +116,17 @@ aside.sidebar-menu:after {
 	transform: rotate(-7deg);
 }
 
-.price-range {
-    display: inline-block;
-    width: 90%;
-    margin: 10px 5px 2px 5px;
-}
-
-.f-price {
-    float: left;
-    background: #a9b8e0;
-    border-radius: 5px;
-    width: 60px;
-    padding: 2px;
-    margin: 1px;
-    font-size: 12px;
-}
-
-
-.l-price {
-    float: right;
-    background: #a9b8e0;
-    border-radius: 5px;
-    width: 60px;
-    padding: 2px;
-    margin: 1px;
-    font-size: 12px;
-}
-
-.slider-range {
-    width: 85%;
-    margin: 2px 5px 10px 5px;
-}
-
-/* #formCity,
-#formRoomType,
-#form-count-guests,
-#checkIn,
-#checkOut {
-    width: 100%;
-    height: 50px;
-    border-radius: 7px;
-    background-color: #fafafa;
-    margin: 5px 0px 5px 0px;
-} */
-
-/* form.homepage-form #formCity,
-form.homepage-form #formRoomType,
-form.homepage-form #checkIn,
-form.homepage-form #checkOut {
-    width: 175px;
-    height: 45px;
-    border-radius: 7px 7px 7px 7px;
-    background-color: #fafafa;
-    margin-top: 10px;
-    margin-bottom: 5px;
-} */
-
-.homepage-form-controll {
-    width: 200px;
-    height: 50px;
-    border-radius: 12px;
-    background-color: #fafafa;
-    margin: 10px 0 5px 0;
-}
-
-form.homepage-form button {
-    width: 100px !important;
-    font-size: 17px;
-    line-height: 25px !important;
-    padding: 5px 5px 5px 5px;
-}
-
-
-
-
 ul {
     list-style-type:none;
 }
 
-body.list-page main {
-    min-height: 84%;
-    margin-bottom: 16px;
+.checked {
+    color: orange;
 }
+.unchecked {
+    color: rgb(180, 177, 177);
+}
+
 
 section.hotel-list {
 
@@ -360,30 +287,6 @@ body {
                  0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
-section.search-form {
-    width: 450px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 20px;
-    margin: auto;
-    padding: 10px 0px 15px 0px;
-}
-
-/* h1 {
-    font-weight: 400;
-    font-size: 5em;
-} */
-
-hr {
-    width: 570px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-form {
-    margin: auto !important;
-    text-align: center;
-}
-
 body footer.profile-page-footer {
     background: #ccc;
     border-top: 3px solid #808080;
@@ -399,11 +302,4 @@ body footer.profile-page-footer {
     width: 50% !important;
     font-size: 17px;
     line-height: 25px;
-}
-
-/* ----- HOTEL LIST PAGE ----- */
-
-aside.sidebar-menu > section > h5 {
-    text-align: center;
-    margin: 25px auto 10px auto;
 }

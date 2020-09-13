@@ -16,7 +16,7 @@ class Favorite extends BaseService {
         return !empty($favorite);
     }
 
-    public function addFavorite($roomId, $userId) {
+    public function addFavorite($userId, $roomId) {
 
         // Prepare parameters
         $parameters = [

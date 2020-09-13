@@ -32,10 +32,6 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <link rel="shortcut icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" -->
-    <!-- rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-    crossorigin="anonymous"> -->
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
@@ -45,10 +41,6 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <script src="assets/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
     $( function() {
-
-        // Select menu
-        //$( "#city" ).selectmenu();
-        //$( "#room_type" ).selectmenu();
 
         $( "#datepicker1" ).datepicker();
         $( "#datepicker2" ).datepicker();
@@ -80,18 +72,10 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="list.html" style="color: black;" >Hotels</a>
+                        <a class="nav-link" href="list.php" style="color: black;" >Hotels</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="about.html" style="color: black;">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: black;">Contact</a>
-                    </li> -->
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <!--<li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
-                    <li><a href="#">Login <i class="fas fa-user"></i></a></li>-->
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">
                             <i class="fas fa-home"></i> Home
@@ -99,17 +83,12 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                     </li>
                     <li class="nav-item"><span class="divider"> | </span></li>
                     <li class="nav-item dropdown">
-                        <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a style="color: #465699;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user"></i> Profile
                         </a>
-                        <!-- <ul class="dropdown-menu">
-                            <li><a href="#">Sign Up <i class="fas fa-user-plus"></i></a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Login <i class="fas fa-user"></i></a></li>
-                        </ul> -->
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="register.html">Sign Up <i class="fas fa-user-plus"></i></a>
-                            <a class="dropdown-item" href="login.html">Log In <i class="fas fa-user"></i></a>
+                            <a class="dropdown-item" href="">Account Details <i class="fas fa-infi"></i></a>
+                            <a class="dropdown-item" href="">Log Out <i class="fas fa-user"></i></a>
                         </div>
                     </li>
                 </ul>
@@ -122,9 +101,32 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
         <section class="container-xl">
             <aside class="sidebar-menu">
                 <section>
-                    <h6>FAVORITES</h6>
-                    <div class="profile-sidebar">
-                        
+                    <div class="favorite-hotels">
+                        <h6>FAVORITES</h6>
+                        <ol>
+                            <li>Megali Vretania Hotel</li>
+                        </ol>
+                    </div>
+                    <div class="my-reviews">
+                        <h6>REVIEWS</h6>
+                        <ol>
+                            <li>Megali Vretania Hotel</li>
+                            <div>
+                                <i class="fa fa-star checked" id="one"></i>
+                                <i class="fa fa-star checked" id="two"></i>
+                                <i class="fa fa-star checked" id="three"></i>
+                                <i class="fa fa-star checked" id="four"></i>
+                                <i class="fa fa-star unchecked" id="five"></i>
+                            </div>
+                            <li>Hilton Hotel</li>
+                            <div>
+                                <i class="fa fa-star checked" id="one"></i>
+                                <i class="fa fa-star checked" id="two"></i>
+                                <i class="fa fa-star checked" id="three"></i>
+                                <i class="fa fa-star unchecked" id="four"></i>
+                                <i class="fa fa-star unchecked" id="five"></i>
+                            </div>
+                        </ol>
                     </div>
                 </section>
             </aside>
