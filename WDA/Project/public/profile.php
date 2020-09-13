@@ -39,7 +39,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="list-style.css">
+    <link rel="stylesheet" href="profile-style.css">
     <link rel="stylesheet" href="assets/jquery/jquery-ui-1.12.1/jquery-ui.css">
     <script src="assets/jquery/jquery-1.12.4.js"></script>
     <script src="assets/jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
@@ -122,47 +122,14 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
         <section class="container-xl">
             <aside class="sidebar-menu">
                 <section>
-                    <h5>FIND THE PERFECT HOTEL</h5>
-                    <div class="sidebar-form">
-                        <form method="POST" action="list.html">
-                            <select name="form-count-guests" id="form-count-guests" class="homepage-form-controll">
-                                <option value="null" selected>Guests</option>
-                                <option value="male">1</option>
-                                <option value="female">2</option>
-                                <option value="other">3+</option>
-                            </select>
-                            <select name="room_type" id="room_type" class="homepage-form-controll">
-                                <option value="null" selected>Room Type</option>
-                                <option value="male">1 BR</option>
-                                <option value="female">2 BR</option>
-                                <option value="other">Suite</option>
-                            </select>
-                            <select name="city" id="city" class="homepage-form-controll">
-                            <option hidden disabled selected>City</option>
-                                <?php
-                                    foreach ($cities as $city) {
-                                ?>
-                                    <option <?php echo $selectedCity==$city ? 'selected="selected"' : ''; ?> value="<?php echo $city; ?>"><?php echo $city; ?></option>
-                                <?php
-                                    }
-                                ?>
-                            </select>
-                            <div class="price-range">
-                                    <p class="f-price" id="amount1">0$</p>
-                                    <p class="l-price" id="amount2">600$</p>
-                            </div>
-                            <div class="clear"></div>
-                            <div id="slider-range" class="price-range"></div>
-                            <!-- <input type="range" id="price-range" name="price-range" min="0" max="5000"> -->
-                            <input type="text" id="datepicker1" name="check_in_date" value="<?php echo $checkInDate; ?>" placeholder="Check-in Date" class="homepage-form-controll">
-                            <input type="text" id="datepicker2" name="check_out_date" value="<?php echo $checkOutDate; ?>" placeholder="Check-out Date" class="homepage-form-controll">
-                            <button type="button" class="btn btn-info">FIND HOTEL</button>
-                        </form>
+                    <h6>FAVORITES</h6>
+                    <div class="profile-sidebar">
+                        
                     </div>
                 </section>
             </aside>
             <section class="hotel-list">
-                <h6 class="search-results-title">Search Results</h6>
+                <h6 class="profile-title">My Bookings</h6>
                 <section>
                     <?php
                         foreach ($allAvailableRooms as $availableRoom) {
@@ -216,7 +183,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
         </section>
     </main>
 
-    <footer class="list-page-footer">
+    <footer class="profile-page-footer">
         <p class="copyrights"> © CollegeLink 2020</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
