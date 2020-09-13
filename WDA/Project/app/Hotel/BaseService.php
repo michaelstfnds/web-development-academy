@@ -39,13 +39,13 @@ class BaseService {
         // Prepare statement
         $statement = $this->getPdo()->prepare($sql);
 
-        // Bind Parameters
-        foreach($parameters as $key => $value) {
-            $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
-        }
+        // // Bind Parameters
+        // foreach($parameters as $key => $value) {
+        //     $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
+        // }
 
         // Execute
-        $status = $statement->execute();
+        $status = $statement->execute($parameters);
         if (!$status) {
             throw new Exception($statement->errorInfo()[2]);
         }
@@ -57,13 +57,13 @@ class BaseService {
         // Prepare Statement
         $statement = $this->getPdo()->prepare($sql);
 
-        // Bind Parameters
-        foreach($parameters as $key => $value) {
-            $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
-        }
+        // // Bind Parameters
+        // foreach($parameters as $key => $value) {
+        //     $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
+        // }
 
         // Execute
-        $status = $statement->execute();
+        $status = $statement->execute($parameters);
         if (!$status) {
             throw new Exception($statement->errorInfo()[2]);
         }
@@ -76,18 +76,18 @@ class BaseService {
         // Prepare Statement
         $statement = $this->getPdo()->prepare($sql);
 
-        // Bind Parameters
-        foreach($parameters as $key => $value) {
-            $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
-        }
+        // // Bind Parameters
+        // foreach($parameters as $key => $value) {
+        //     $statement->bindParam($key, $value, is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR);
+        // }
 
         // Execute
-        $status = $statement->execute();
+        $status = $statement->execute($parameters);
         if (!$status) {
             throw new Exception($statement->errorInfo()[2]);
         }
 
-        // Fetch all
+        // Fetch
         return $statement->fetch($type);
     }
 

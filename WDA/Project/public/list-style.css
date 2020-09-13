@@ -4,31 +4,12 @@ html {
     padding: 0;
 }
 
-body.homepage {
-    background: url(assets/images/hotel6.jpg);
-    background-size: cover;
-    background-position: center;
-    /* font-family: 'Lato'; */
-    /* color: white; */
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
 }
-
-body.homepage main {
-    height: 75%;
-}
-
-
-/* main.homepage-style {
-    background: url(hotel6.jpg);
-    background-size: cover;
-    background-position: center;
-} */
 
 h1,
 h2,
@@ -40,23 +21,6 @@ h6 {
     font-weight: 400 !important;
 
 }
-
-
-/* footer {
-    margin-top: 10;
-} */
-
-/* body > footer {
-    border-top: 1px solid #fff;
-} */
-
-/* body > header {
-    box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.25);
-} */
-
-/* header {
-    background: #ccc !important;
-} */
 
 header.header-shadow{
     position:relative;
@@ -79,7 +43,11 @@ header.header-shadow:after{
     border-radius:100%;
 }
 
-header > nav div ul li > span.divider {
+/* header > nav div ul li > span.divider {
+    font-size: 25px;
+} */
+
+.divider {
     font-size: 25px;
 }
 
@@ -158,7 +126,7 @@ aside.sidebar-menu:after {
 	transform: rotate(-7deg);
 }
 
-.price-slider {
+.price-range {
     display: inline-block;
     width: 90%;
     margin: 10px 5px 2px 5px;
@@ -168,9 +136,10 @@ aside.sidebar-menu:after {
     float: left;
     background: #a9b8e0;
     border-radius: 5px;
-    width: 40px;
+    width: 60px;
     padding: 2px;
     margin: 1px;
+    font-size: 12px;
 }
 
 
@@ -178,14 +147,15 @@ aside.sidebar-menu:after {
     float: right;
     background: #a9b8e0;
     border-radius: 5px;
-    width: 40px;
+    width: 60px;
     padding: 2px;
     margin: 1px;
+    font-size: 12px;
 }
 
-.price-range {
-    width: 90%;
-    margin: 2px 5px 10px 3px;
+.slider-range {
+    width: 85%;
+    margin: 2px 5px 10px 5px;
 }
 
 /* #formCity,
@@ -236,7 +206,7 @@ ul {
 
 body.list-page main {
     min-height: 84%;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 section.hotel-list {
@@ -305,7 +275,7 @@ p.price {
     padding: 5px 5px 5px 5px;
 }
 
-p.tag {
+div.tag {
     display: inline-block;
     background: #e8e8e8;
     width: 71%;
@@ -317,7 +287,19 @@ p.tag {
 }
 
 div.hotel-footer {
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
+}
+
+.put-left{
+    flex: left;
+    text-align: center;
+    margin: 1px 25px 1px 25px ;
+}
+
+.put-right{
+    flex: right;
+    text-align: center;
+    margin: 1px 25px 1px 25px ;
 }
 
 .hotel-list h6.search-results-title {

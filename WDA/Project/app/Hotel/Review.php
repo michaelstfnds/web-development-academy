@@ -4,7 +4,7 @@ namespace Hotel;
 
 use Hotel\BaseService;
 
-class Favorite extends BaseService {
+class Review extends BaseService {
 
     public function isFavorite($roomId, $userId) {
         $parameters = [

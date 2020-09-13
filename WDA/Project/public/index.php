@@ -42,8 +42,8 @@ $allTypes = $type->getAllTypes();
         //$( "#city" ).selectmenu();
         //$( "#room_type" ).selectmenu();
 
-        $( "#datepicker1" ).datepicker();
-        $( "#datepicker2" ).datepicker();
+        $( "#datepicker1" ).datepicker({dateFormat: 'dd-mm-yy'});
+        $( "#datepicker2" ).datepicker({dateFormat: 'dd-mm-yy'});
         
     } );
     </script>
@@ -122,8 +122,8 @@ $allTypes = $type->getAllTypes();
                             }
                         ?>
                     </select>
-                    <input type="text" id="datepicker1" name="date_check_in" placeholder="Check-in Date" class="homepage-form-controll">
-                    <input type="text" id="datepicker2" name="date_check_out" placeholder="Check-out Date" class="homepage-form-controll">
+                    <input type="text" id="datepicker1" name="check_in_date" placeholder="Check-in Date" class="homepage-form-controll">
+                    <input type="text" id="datepicker2" name="check_out_date" placeholder="Check-out Date" class="homepage-form-controll">
                     <button type="submit" class="btn btn-info">Search</button>
                 </form>
             </section>

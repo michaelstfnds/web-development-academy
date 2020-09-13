@@ -147,15 +147,15 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                                     }
                                 ?>
                             </select>
-                            <div class="price-slider">
+                            <div class="price-range">
                                     <p class="f-price" id="amount1">0$</p>
                                     <p class="l-price" id="amount2">600$</p>
                             </div>
                             <div class="clear"></div>
                             <div id="slider-range" class="price-range"></div>
                             <!-- <input type="range" id="price-range" name="price-range" min="0" max="5000"> -->
-                            <input type="text" id="datepicker1" name="date_check_in" value="<?php echo $checkInDate; ?>" placeholder="Check-in Date" class="homepage-form-controll">
-                            <input type="text" id="datepicker2" name="date_check_out" value="<?php echo $checkOutDate; ?>" placeholder="Check-out Date" class="homepage-form-controll">
+                            <input type="text" id="datepicker1" name="check_in_date" value="<?php echo $checkInDate; ?>" placeholder="Check-in Date" class="homepage-form-controll">
+                            <input type="text" id="datepicker2" name="check_out_date" value="<?php echo $checkOutDate; ?>" placeholder="Check-out Date" class="homepage-form-controll">
                             <button type="button" class="btn btn-info">FIND HOTEL</button>
                         </form>
                     </div>
@@ -180,7 +180,23 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                         <div class="clear"></div>
                         <div class="hotel-footer">
                             <p class="price"> Per Night: <?php echo $availableRoom['price']; ?>$</p>
-                            <p class="tag">ppppppppppppppppp</p>
+                            <div class="tag">
+                                <span class="put-left" >Count of Guests: <?php echo $availableRoom['count_of_guests']; ?></span>
+                                <span>|</span>
+                                <span class="put-right">Type of Room: 
+                                <?php
+                                    if ($availableRoom['type_id'] == 1) {
+                                        echo "Single Room" ;
+                                    } elseif ($availableRoom['type_id'] == 2) {
+                                        echo "Double Room" ;
+                                    } elseif ($availableRoom['type_id'] == 3) {
+                                        echo "Triple Room" ;
+                                    } else {
+                                        echo "Fourfold Room" ;
+                                    }
+                                ?>
+                            </span>
+                            </div>
                         </div>
                     </article>
                     <?php

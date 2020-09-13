@@ -187,15 +187,15 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                         <div>
                             <i class="fas fa-bed"></i> 
                             <?php
-                            if ($roomInfo['type_id'] == 1) {
-                                echo "Single Room" ;
-                            } elseif ($roomInfo['type_id'] == 2) {
-                                echo "Double Room" ;
-                            } elseif ($roomInfo['type_id'] == 3) {
-                                echo "Triple Room" ;
-                            } else {
-                                echo "Fourfold Room" ;
-                            }
+                                if ($roomInfo['type_id'] == 1) {
+                                    echo "Single Room" ;
+                                } elseif ($roomInfo['type_id'] == 2) {
+                                    echo "Double Room" ;
+                                } elseif ($roomInfo['type_id'] == 3) {
+                                    echo "Triple Room" ;
+                                } else {
+                                    echo "Fourfold Room" ;
+                                }
                             ?>
                         </div>
                     </li>
