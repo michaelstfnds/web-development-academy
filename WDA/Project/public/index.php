@@ -27,7 +27,7 @@ $allTypes = $type->getAllTypes();
     rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
     rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
     crossorigin="anonymous"> -->
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\custom.css">
     <script src="https://kit.fontawesome.com/4ce5ded0cf.js" crossorigin="anonymous"></script>
@@ -44,7 +44,6 @@ $allTypes = $type->getAllTypes();
 
         $( "#datepicker1" ).datepicker({dateFormat: 'dd-mm-yy'});
         $( "#datepicker2" ).datepicker({dateFormat: 'dd-mm-yy'});
-        
     } );
     </script>
 </head>

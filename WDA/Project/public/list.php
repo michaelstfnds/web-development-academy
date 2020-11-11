@@ -182,7 +182,7 @@ $allAvailableRooms = $room->search(new DateTime($checkInDate), new DateTime($che
                         </aside>
                         <main class="hotel-info">
                             <h4 class="hotel-name"><?php echo $availableRoom['name']; ?></h4>
-                            <p  class="hotel-address"><?php echo $availableRoom['city'] . ", " . $availableRoom[':area']; ?></p>
+                            <p  class="hotel-address"><?php echo $availableRoom['city'] . ", " . $availableRoom['area']; ?></p>
                             <p class="hotel-description"><?php echo $availableRoom['description_short']; ?></p>
                             <button type="button" class="btn btn-info">Go to Room Page</button>
                         </main>

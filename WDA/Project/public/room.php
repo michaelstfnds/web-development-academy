@@ -5,6 +5,7 @@ require_once __DIR__ . '/../boot/boot.php';
 use Hotel\Room;
 use Hotel\Favorite;
 use Hotel\User;
+use Hotel\Review;
 use DateTime;
 
 // Initialize Room service
@@ -30,8 +31,12 @@ if (empty($roomInfo)) {
 //Get current user id
 $userId = User::getCurrentUserId();
 
-// Checl if room is favorite for current user
+// Check if room is favorite for current user
 $isFavorite = $favorite->isFavorite($roomId, $userId);
+
+//Load all reviews
+$review = new Review();
+$allReviews = $review->getReviewsByRoom($roomId);
 
 
 ?>
@@ -211,18 +216,43 @@ $isFavorite = $favorite->isFavorite($roomId, $userId);
                     <hr>
                 </div>
                 <section class="reviews">
-                    <div>
-                        <h3>Reviews</h3>
-                    </div>
-                    <div class="review-list"></div>
+                    <h3>Reviews</h3>
+                    <br>
+                    <?php
+                        foreach ($allReviews as $review) {
+                    ?>
+                        <div class="review-list">
+                            <h4>
+                                <span>1. John Doe</span>
+                                <div class="div-reviews">
+                                    <?php
+                                        $roomAvgReview = $roomInfo['avg_reviews'];
+                                        for ($i = 1; $i <= 5; $i++) {
+                                            if ($roomAvgReview > $i) {
+                                                ?>
+                                                <span class="fa fa-star checked"></span>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <span class="fa fa-star unchecked"></span>
+                                                <?php
+                                            }
+                                        }
+                                    ?>
+                                </div>
+                            </h4>
+                        </div>
+                    <?php
+                        }
+                    ?>
                     <div class="add-review">
                         <h3>Add A Review</h3>
                         <span>
-                            <i class="fa fa-star unchecked" id="one"></i>
-                            <i class="fa fa-star unchecked" id="two"></i>
-                            <i class="fa fa-star unchecked" id="three"></i>
-                            <i class="fa fa-star unchecked" id="four"></i>
-                            <i class="fa fa-star unchecked" id="five"></i>
+                            <span class="fa fa-star unchecked" id="one"></span>
+                            <span class="fa fa-star unchecked" id="two"></span>
+                            <span class="fa fa-star unchecked" id="three"></span>
+                            <span class="fa fa-star unchecked" id="four"></span>
+                            <span class="fa fa-star unchecked" id="five"></span>
                         </span>
                         <textarea name="review" rows="2" cols="95">Add your review here...</textarea>
                         <div style="text-align:center;">
